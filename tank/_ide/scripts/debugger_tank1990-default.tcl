@@ -12,13 +12,13 @@
 connect -url tcp:127.0.0.1:3121
 targets -set -filter {jtag_cable_name =~ "RealDigital Boo 887100000000A" && level==0 && jtag_device_ctx=="jsn3-0362f093-0"}
 fpga -file C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990/_ide/bitstream/mb_usb_hdmi_top.bit
-targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "RealDigital Boo 887100000000A" && jtag_device_ctx=="jsn3-0362f093-0"}
 loadhw -hw C:/Users/flyin/Desktop/ECE_385/tank1990/mb_usb_hdmi_top/export/mb_usb_hdmi_top/hw/mb_usb_hdmi_top.xsa -regs
 configparams mdm-detect-bscan-mask 2
-targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "RealDigital Boo 887100000000A" && jtag_device_ctx=="jsn3-0362f093-0"}
 rst -system
 after 3000
-targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "RealDigital Boo 887100000000A" && jtag_device_ctx=="jsn3-0362f093-0"}
 dow C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990/Debug/tank1990.elf
-targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "RealDigital Boo 887100000000A" && jtag_device_ctx=="jsn3-0362f093-0"}
 con

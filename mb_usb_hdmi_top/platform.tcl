@@ -118,3 +118,5 @@ platform config -updatehw {C:/Users/flyin/Desktop/ECE_385/tank1990/mb_usb_hdmi_t
 platform generate -domains 
 platform config -updatehw {C:/Users/flyin/Desktop/ECE_385/tank1990/mb_usb_hdmi_top.xsa}
 platform generate -domains 
+platform config -updatehw {C:/Users/flyin/Desktop/ECE_385/tank1990/mb_usb_hdmi_top.xsa}
+platform generate -domains 

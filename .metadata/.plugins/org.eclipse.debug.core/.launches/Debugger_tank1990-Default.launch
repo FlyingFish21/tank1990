@@ -12,7 +12,7 @@
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uicrosstrigger.bpcontainer" value="{&quot;arch&quot;:&quot;non_zynq&quot;,&quot;isSelected&quot;:false,&quot;breakPoints&quot;:[]}"/>
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uidebug.type" value="STANDALONE_DEBUG"/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uienable.crosstrigger" value="false"/>
-    <stringAttribute key="com.xilinx.sdk.tcf.debug.uifpga.device" value="Auto Detect"/>
+    <stringAttribute key="com.xilinx.sdk.tcf.debug.uifpga.device" value="RealDigital Boo 887100000000A/2-xc7s50"/>
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uihw.bit.file" value="_ide/bitstream/mb_usb_hdmi_top.bit"/>
     <stringAttribute key="com.xilinx.sdk.tcf.debug.uihw.init.tcl" value=""/>
     <booleanAttribute key="com.xilinx.sdk.tcf.debug.uipl.powerup" value="false"/>
