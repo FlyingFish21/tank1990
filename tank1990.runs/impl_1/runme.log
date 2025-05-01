@@ -591,3 +591,184 @@ INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 
 
 Phase 1 Build RT Design
 Checksum: PlaceDB: ac18b695 ConstDB: 0 ShapeSum: 509cb707 RouteDB: 0
+Post Restoration Checksum: NetGraph: 2c6fe2d0 NumContArr: fa64e042 Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: 126d4c312
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:47 . Memory (MB): peak = 1991.859 ; gain = 14.754
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 126d4c312
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:48 . Memory (MB): peak = 1997.887 ; gain = 20.781
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 126d4c312
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:48 . Memory (MB): peak = 1997.887 ; gain = 20.781
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: fc2fbb16
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:53 . Memory (MB): peak = 2009.895 ; gain = 32.789
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.802  | TNS=0.000  | WHS=-0.177 | THS=-62.789|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00677669 %
+  Global Horizontal Routing Utilization  = 0.00130141 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 5084
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 5084
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 1a74a4e82
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:56 . Memory (MB): peak = 2032.121 ; gain = 55.016
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 1a74a4e82
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:56 . Memory (MB): peak = 2032.121 ; gain = 55.016
+Phase 3 Initial Routing | Checksum: d223f5c2
+
+Time (s): cpu = 00:01:17 ; elapsed = 00:01:03 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 547
+ Number of Nodes with overlaps = 72
+ Number of Nodes with overlaps = 34
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.970  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1ad562885
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:01:19 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.970  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 168c1b38a
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:01:19 . Memory (MB): peak = 2065.680 ; gain = 88.574
+Phase 4 Rip-up And Reroute | Checksum: 168c1b38a
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:01:19 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 18150de52
+
+Time (s): cpu = 00:01:37 ; elapsed = 00:01:20 . Memory (MB): peak = 2065.680 ; gain = 88.574
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.977  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 18150de52
+
+Time (s): cpu = 00:01:37 ; elapsed = 00:01:20 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 18150de52
+
+Time (s): cpu = 00:01:37 ; elapsed = 00:01:20 . Memory (MB): peak = 2065.680 ; gain = 88.574
+Phase 5 Delay and Skew Optimization | Checksum: 18150de52
+
+Time (s): cpu = 00:01:37 ; elapsed = 00:01:20 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 114ad636f
+
+Time (s): cpu = 00:01:39 ; elapsed = 00:01:22 . Memory (MB): peak = 2065.680 ; gain = 88.574
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.977  | TNS=0.000  | WHS=0.025  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: c4ed0b3c
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:22 . Memory (MB): peak = 2065.680 ; gain = 88.574
+Phase 6 Post Hold Fix | Checksum: c4ed0b3c
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:22 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 2.10317 %
+  Global Horizontal Routing Utilization  = 2.47814 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 15c864aa7
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:22 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 15c864aa7
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:22 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1115804bf
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:01:24 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.977  | TNS=0.000  | WHS=0.025  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1115804bf
+
+Time (s): cpu = 00:01:43 ; elapsed = 00:01:25 . Memory (MB): peak = 2065.680 ; gain = 88.574
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:01:43 ; elapsed = 00:01:25 . Memory (MB): peak = 2065.680 ; gain = 88.574
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+138 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:49 ; elapsed = 00:01:28 . Memory (MB): peak = 2065.680 ; gain = 88.574
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 2065.680 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/impl_1/mb_usb_hdmi_top_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2065.680 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file mb_usb_hdmi_top_drc_routed.rpt -pb mb_usb_hdmi_top_drc_routed.pb -rpx mb_usb_hdmi_top_drc_routed.rpx
+Command: report_drc -file mb_usb_hdmi_top_drc_routed.rpt -pb mb_usb_hdmi_top_drc_routed.pb -rpx mb_usb_hdmi_top_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/impl_1/mb_usb_hdmi_top_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file mb_usb_hdmi_top_methodology_drc_routed.rpt -pb mb_usb_hdmi_top_methodology_drc_routed.pb -rpx mb_usb_hdmi_top_methodology_drc_routed.rpx
+Command: report_methodology -file mb_usb_hdmi_top_methodology_drc_routed.rpt -pb mb_usb_hdmi_top_methodology_drc_routed.pb -rpx mb_usb_hdmi_top_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
