@@ -1,0 +1,45 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../tank1990.gen/sources_1/bd/mb_block/ipshared/ec67/hdl" --include "../../../../tank1990.gen/sources_1/bd/mb_block/ipshared/7698" --include "../../../../tank1990.gen/sources_1/ip/clk_wiz_0" \
+"../../../../tank1990.gen/sources_1/ip/base_rom/sim/base_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/brick_rom_1/sim/brick_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_right_rom/sim/bullet_right_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_left_rom/sim/bullet_left_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_down_rom/sim/bullet_down_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_up_rom/sim/bullet_up_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/tank_down_rom_1/sim/tank_down_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/tank_up_rom_1/sim/tank_up_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/tank_right_rom/sim/tank_right_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/tank_left_rom_2/sim/tank_left_rom.v" \
+
+sv xil_defaultlib  --include "../../../../tank1990.gen/sources_1/bd/mb_block/ipshared/ec67/hdl" --include "../../../../tank1990.gen/sources_1/bd/mb_block/ipshared/7698" --include "../../../../tank1990.gen/sources_1/ip/clk_wiz_0" \
+"../../../../sprites/base/base.sv" \
+"../../../../sprites/base/base_palette.sv" \
+"../../../../sprites/bricks/brick_map1.sv" \
+"../../../../sprites/bricks/brick_palette.sv" \
+"../../../../tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv" \
+"../../../../sprites/bullet_down/bullet_down_palette.sv" \
+"../../../../tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv" \
+"../../../../sprites/bullet_left/bullet_left_palette.sv" \
+"../../../../tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv" \
+"../../../../sprites/bullet_right/bullet_right_palette.sv" \
+"../../../../tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv" \
+"../../../../sprites/bullet_up/bullet_up_palette.sv" \
+"../../../../tank1990.srcs/sources_1/new/color_picker.sv" \
+"../../../../level_1_map.sv" \
+"../../../../sprites/tank.sv" \
+"../../../../sprites/tank_down/tank_down.sv" \
+"../../../../sprites/tank_down/tank_down_palette.sv" \
+"../../../../sprites/tank_left/tank_left.sv" \
+"../../../../sprites/tank_left/tank_left_palette.sv" \
+"../../../../sprites/tank_right/tank_right.sv" \
+"../../../../sprites/tank_right/tank_right_palette.sv" \
+"../../../../sprites/tank_top_level.sv" \
+"../../../../sprites/tank_up/tank_up.sv" \
+"../../../../sprites/tank_up/tank_up_palette.sv" \
+"../../../../tank1990.srcs/sim_1/new/testbench.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

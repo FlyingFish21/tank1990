@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="color_picker_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="color_picker_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="8,564,682.819 ns"></ZoomStartTime>
+      <ZoomEndTime time="8,565,075.820 ns"></ZoomEndTime>
+      <Cursor1Time time="12,288,100.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="131"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/color_picker_tb/vga_clk" type="logic">
+      <obj_property name="ElementShortName">vga_clk</obj_property>
+      <obj_property name="ObjectShortName">vga_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/vsync" type="logic">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/keycode0" type="array">
+      <obj_property name="ElementShortName">keycode0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">keycode0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/DrawX" type="array">
+      <obj_property name="ElementShortName">DrawX[9:0]</obj_property>
+      <obj_property name="ObjectShortName">DrawX[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/DrawY" type="array">
+      <obj_property name="ElementShortName">DrawY[9:0]</obj_property>
+      <obj_property name="ObjectShortName">DrawY[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/keycode" type="array">
+      <obj_property name="ElementShortName">keycode[7:0]</obj_property>
+      <obj_property name="ObjectShortName">keycode[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/red" type="array">
+      <obj_property name="ElementShortName">red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">red[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/green" type="array">
+      <obj_property name="ElementShortName">green[3:0]</obj_property>
+      <obj_property name="ObjectShortName">green[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/blue" type="array">
+      <obj_property name="ElementShortName">blue[3:0]</obj_property>
+      <obj_property name="ObjectShortName">blue[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/outfile" type="array">
+      <obj_property name="ElementShortName">outfile[31:0]</obj_property>
+      <obj_property name="ObjectShortName">outfile[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/dut/brick_address" type="array">
+      <obj_property name="ElementShortName">brick_address[5:0]</obj_property>
+      <obj_property name="ObjectShortName">brick_address[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/dut/brick_data" type="array">
+      <obj_property name="ElementShortName">brick_data[39:0]</obj_property>
+      <obj_property name="ObjectShortName">brick_data[39:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/dut/brick_col" type="array">
+      <obj_property name="ElementShortName">brick_col[5:0]</obj_property>
+      <obj_property name="ObjectShortName">brick_col[5:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/dut/brick_map_instance/addr" type="array">
+      <obj_property name="ElementShortName">addr[5:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/dut/brick_map_instance/data" type="array">
+      <obj_property name="ElementShortName">data[39:0]</obj_property>
+      <obj_property name="ObjectShortName">data[39:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/dut/show_brick" type="array">
+      <obj_property name="ElementShortName">show_brick[0:0]</obj_property>
+      <obj_property name="ObjectShortName">show_brick[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/color_picker_tb/dut/base_red" type="array">
+      <obj_property name="ElementShortName">base_red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">base_red[3:0]</obj_property>
+   </wvobject>
+</wave_config>

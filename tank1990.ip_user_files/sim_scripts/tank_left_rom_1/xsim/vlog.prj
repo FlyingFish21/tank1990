@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../tank1990.gen/sources_1/ip/tank_left_rom_1/sim/tank_left_rom.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -1,0 +1,113 @@
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot color_picker_tb_behav xil_defaultlib.color_picker_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'douta' [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_map1.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'index' [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_map1.sv:60]
+WARNING: [VRFC 10-3823] variable 'keycode' might have multiple concurrent drivers [C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/new/color_picker.sv:51]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_left/tank_left.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_right/tank_right.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_up/tank_up.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_down/tank_down.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_map1.sv:53]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base.sv:50]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv" Line 1. Module bullet_up doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_up/bullet_up_palette.sv" Line 1. Module bullet_up_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv" Line 1. Module bullet_down doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_down/bullet_down_palette.sv" Line 1. Module bullet_down_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv" Line 1. Module bullet_left doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_left/bullet_left_palette.sv" Line 1. Module bullet_left_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv" Line 1. Module bullet_right doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_right/bullet_right_palette.sv" Line 1. Module bullet_right_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_map1.sv" Line 1. Module brick doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_palette.sv" Line 1. Module brick_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base.sv" Line 1. Module base doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base_palette.sv" Line 1. Module base_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv" Line 1. Module bullet_up doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_up/bullet_up_palette.sv" Line 1. Module bullet_up_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv" Line 1. Module bullet_down doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_down/bullet_down_palette.sv" Line 1. Module bullet_down_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv" Line 1. Module bullet_left doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_left/bullet_left_palette.sv" Line 1. Module bullet_left_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv" Line 1. Module bullet_right doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_right/bullet_right_palette.sv" Line 1. Module bullet_right_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_map1.sv" Line 1. Module brick doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_palette.sv" Line 1. Module brick_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base.sv" Line 1. Module base doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base_palette.sv" Line 1. Module base_palette doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_left_rom
+Compiling module xil_defaultlib.tank_left_palette
+Compiling module xil_defaultlib.tank_left
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_right_rom
+Compiling module xil_defaultlib.tank_right_palette
+Compiling module xil_defaultlib.tank_right
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_up_rom
+Compiling module xil_defaultlib.tank_up_palette
+Compiling module xil_defaultlib.tank_up
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_down_rom
+Compiling module xil_defaultlib.tank_down_palette
+Compiling module xil_defaultlib.tank_down
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_up_rom
+Compiling module xil_defaultlib.bullet_up_palette
+Compiling module xil_defaultlib.bullet_up
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_down_rom
+Compiling module xil_defaultlib.bullet_down_palette
+Compiling module xil_defaultlib.bullet_down
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_left_rom
+Compiling module xil_defaultlib.bullet_left_palette
+Compiling module xil_defaultlib.bullet_left
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_right_rom
+Compiling module xil_defaultlib.bullet_right_palette
+Compiling module xil_defaultlib.bullet_right
+Compiling module xil_defaultlib.tank_top_level
+Compiling module xil_defaultlib.tank
+Compiling module xil_defaultlib.level_one
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.brick_rom
+Compiling module xil_defaultlib.brick_palette
+Compiling module xil_defaultlib.brick
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.base_rom
+Compiling module xil_defaultlib.base_palette
+Compiling module xil_defaultlib.base
+Compiling module xil_defaultlib.color_picker
+Compiling module xil_defaultlib.color_picker_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot color_picker_tb_behav

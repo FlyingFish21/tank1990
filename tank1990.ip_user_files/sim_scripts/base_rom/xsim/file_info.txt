@@ -1,0 +1,2 @@
+base_rom.v,verilog,xil_defaultlib,../../../../tank1990.gen/sources_1/ip/base_rom/sim/base_rom.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
