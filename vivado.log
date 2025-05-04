@@ -1,0 +1,522 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun May  4 16:03:59 2025
+# Process ID: 10704
+# Current directory: C:/Users/Leo/Documents/GitHub/tank1990
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14340 C:\Users\Leo\Documents\GitHub\tank1990\tank1990.xpr
+# Log file: C:/Users/Leo/Documents/GitHub/tank1990/vivado.log
+# Journal file: C:/Users/Leo/Documents/GitHub/tank1990\vivado.jou
+# Running On: Leo, OS: Windows, CPU Frequency: 1797 MHz, CPU Physical cores: 16, Host memory: 10592 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Leo/Documents/GitHub/tank1990/tank1990.xpr
+WARNING: [Board 49-91] Board repository path 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store' does not exist, it will not be used to search board files.
+WARNING: [Board 49-91] Board repository path 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store' does not exist, it will not be used to search board files.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.0/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.1/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [Project 1-313] Project file moved from 'C:/Users/flyin/Desktop/ECE_385/tank1990' since last save.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Users/Leo/Documents/GitHub/ECE385_provided/RD_hdmi_ip2020', nor could it be found using path 'C:/Users/flyin/Desktop/ECE_385/ECE385_provided/RD_hdmi_ip2020'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/Leo/Documents/GitHub/ECE385_provided/RD_hdmi_ip2020'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'hdmi_tx_0' is locked:
+* IP definition 'hdmi_tx (1.0)' for IP 'hdmi_tx_0' (customized with software release 2022.2) was not found in the IP Catalog.
+open_project: Time (s): cpu = 00:01:10 ; elapsed = 00:00:46 . Memory (MB): peak = 1283.180 ; gain = 504.148
+update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/utils_1/imports/synth_1/mb_usb_hdmi_top.dcp with file C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/mb_usb_hdmi_top.dcp
+reset_run tank_left_rom_synth_1
+reset_run tank_right_rom_synth_1
+reset_run tank_up_rom_synth_1
+reset_run tank_down_rom_synth_1
+reset_run base_rom_synth_1
+reset_run brick_rom_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'bullet_right_rom'...
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bullet_right_rom
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 75e09985b184f95d to dir: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/7/5/75e09985b184f95d/bullet_right_rom.dcp to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/7/5/75e09985b184f95d/bullet_right_rom_sim_netlist.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/7/5/75e09985b184f95d/bullet_right_rom_sim_netlist.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/7/5/75e09985b184f95d/bullet_right_rom_stub.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/7/5/75e09985b184f95d/bullet_right_rom_stub.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP bullet_right_rom, cache-ID = 75e09985b184f95d; cache size = 20.365 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'bullet_left_rom'...
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bullet_left_rom
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 9da5f0b9621c44a7 to dir: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/d/9da5f0b9621c44a7/bullet_left_rom.dcp to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/d/9da5f0b9621c44a7/bullet_left_rom_sim_netlist.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/d/9da5f0b9621c44a7/bullet_left_rom_sim_netlist.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/d/9da5f0b9621c44a7/bullet_left_rom_stub.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/d/9da5f0b9621c44a7/bullet_left_rom_stub.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP bullet_left_rom, cache-ID = 9da5f0b9621c44a7; cache size = 20.365 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'bullet_down_rom'...
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bullet_down_rom
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry a174eecf99d0f637 to dir: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/a/1/a174eecf99d0f637/bullet_down_rom.dcp to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/a/1/a174eecf99d0f637/bullet_down_rom_sim_netlist.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/a/1/a174eecf99d0f637/bullet_down_rom_sim_netlist.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/a/1/a174eecf99d0f637/bullet_down_rom_stub.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/a/1/a174eecf99d0f637/bullet_down_rom_stub.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP bullet_down_rom, cache-ID = a174eecf99d0f637; cache size = 20.365 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'bullet_up_rom'...
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: bullet_up_rom
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 981532f665233fed to dir: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/8/981532f665233fed/bullet_up_rom.dcp to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/8/981532f665233fed/bullet_up_rom_sim_netlist.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/8/981532f665233fed/bullet_up_rom_sim_netlist.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/8/981532f665233fed/bullet_up_rom_stub.v to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/8/981532f665233fed/bullet_up_rom_stub.vhdl to c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP bullet_up_rom, cache-ID = 981532f665233fed; cache size = 20.365 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tank_left_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tank_right_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tank_up_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tank_down_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'base_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'brick_rom'...
+[Sun May  4 16:38:59 2025] Launched tank_left_rom_synth_1, tank_right_rom_synth_1, tank_up_rom_synth_1, tank_down_rom_synth_1, base_rom_synth_1, brick_rom_synth_1, synth_1...
+Run output will be captured here:
+tank_left_rom_synth_1: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left_rom_synth_1/runme.log
+tank_right_rom_synth_1: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_right_rom_synth_1/runme.log
+tank_up_rom_synth_1: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/runme.log
+tank_down_rom_synth_1: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_down_rom_synth_1/runme.log
+base_rom_synth_1: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/base_rom_synth_1/runme.log
+brick_rom_synth_1: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/brick_rom_synth_1/runme.log
+synth_1: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/runme.log
+[Sun May  4 16:39:02 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:45 ; elapsed = 00:00:34 . Memory (MB): peak = 1402.328 ; gain = 101.543
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci' is already up-to-date
+[Sun May  4 16:43:14 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/runme.log
+[Sun May  4 16:43:14 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci' is already up-to-date
+[Sun May  4 16:45:29 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/runme.log
+[Sun May  4 16:45:29 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/impl_1/runme.log
+INFO: [Vivado 12-8231] Launching Vitis
+INFO: [Vivado 12-417] Running vitis
+INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
+INFO: [Vivado 12-8217] Implementation run is out of date. Exported hardware information may be inconsistent with respect to the current state of the design. It is recommended that you re-run implementation and re-generate bitstream/PDI before doing hardware export.
+INFO: [Vivado 12-8217] Implementation run is out of date. Exported hardware information may be inconsistent with respect to the current state of the design. It is recommended that you re-run implementation and re-generate bitstream/PDI before doing hardware export.
+write_hw_platform -fixed -include_bit -force -file C:/Users/Leo/Documents/GitHub/tank1990/mb_usb_hdmi_top.xsa
+INFO: [Project 1-1918] Creating Hardware Platform: C:/Users/Leo/Documents/GitHub/tank1990/mb_usb_hdmi_top.xsa ...
+WARNING: [Vivado_Tcl 4-413] Exported hardware design may be stale because Block Design is locked for the following reasons 
+* IP definition 'hdmi_tx (1.0)' for IP 'hdmi_tx_0' (customized with software release 2022.2) was not found in the IP Catalog.
+INFO: [Project 1-1943] The Hardware Platform can be used for Hardware
+INFO: [Project 1-1941] Successfully created Hardware Platform: C:/Users/Leo/Documents/GitHub/tank1990/mb_usb_hdmi_top.xsa
+INFO: [Hsi 55-2053] elapsed time for repository (C:/Xilinx/Vivado/2022.2/data/embeddedsw) loading 4 seconds
+write_hw_platform: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1605.602 ; gain = 195.406
+open_hw_manager
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/utils_1/imports/synth_1/mb_usb_hdmi_top.dcp with file C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/mb_usb_hdmi_top.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci' is already up-to-date
+[Sun May  4 17:09:44 2025] Launched synth_1...
+Run output will be captured here: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/runme.log
+[Sun May  4 17:09:44 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/impl_1/runme.log
+close_hw_manager
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/base_rom/base_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'base_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/base_rom/base_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/base_rom/base_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/brick_rom_1/brick_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'brick_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/brick_rom_1/brick_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/brick_rom_1/brick_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'bullet_right_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'bullet_left_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'bullet_down_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'bullet_up_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_down_rom_1/tank_down_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tank_down_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_down_rom_1/tank_down_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_down_rom_1/tank_down_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_up_rom_1/tank_up_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tank_up_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_up_rom_1/tank_up_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_up_rom_1/tank_up_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_right_rom/tank_right_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tank_right_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_right_rom/tank_right_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_right_rom/tank_right_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target Simulation [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_left_rom_2/tank_left_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tank_left_rom'...
+export_ip_user_files -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_left_rom_2/tank_left_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_left_rom_2/tank_left_rom.xci] -directory C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files -ipstatic_source_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/modelsim} {questa=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/questa} {riviera=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/riviera} {activehdl=C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'color_picker_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-12490] The selected simulation model for 'hdmi_tx_0' IP changed to '' from 'rtl', the simulation run directory will be deleted.
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+Generating merged BMM file for the design top 'color_picker_tb'...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-50] Design contains embedded sources, generating MEM files for simulation...
+Generating merged BMM file for the design top 'color_picker_tb'...
+Generating merged BMM file for the design top 'color_picker_tb'...
+INFO: [SIM-utils-54] Inspecting design source files for 'color_picker_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/base_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/base.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/brick_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/brick.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_down_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_down.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_left_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_left.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_right_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_right.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_up_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/bullet_up.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_0_mixed.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_1_wb.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_2_nm.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_4_mx.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_0_mixed.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_1_wb.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_2_nm.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_4_mx.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_3_sp.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_3_sp.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_0_mixed.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_1_wb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_2_nm.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_4_mx.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_0_mixed.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_1_wb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_2_nm.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_4_mx.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_2_memory_3_sp.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/mode_1_memory_3_sp.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_down_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_down.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_left_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_left.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_right_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_right.COE'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_up_rom.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/tank_up.COE'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj color_picker_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/base_rom/sim/base_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module base_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/brick_rom_1/sim/brick_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module brick_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/sim/bullet_right_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_right_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/sim/bullet_left_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_left_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/sim/bullet_down_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_down_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/sim/bullet_up_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_up_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_down_rom_1/sim/tank_down_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_down_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/sim/tank_up_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_up_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_right_rom/sim/tank_right_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_right_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_left_rom_2/sim/tank_left_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_left_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module base
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module base_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_map1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module brick
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module brick_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_down
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_down/bullet_down_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_down_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_left
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_left/bullet_left_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_left_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_right
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_right/bullet_right_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_right_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_up
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_up/bullet_up_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bullet_up_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/color_picker.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module color_picker
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'vsync' is not allowed [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/color_picker.sv:36]
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'keycode' is not allowed [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/color_picker.sv:40]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/level_1_map.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module level_one
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_down/tank_down.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_down
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_down/tank_down_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_down_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_left/tank_left.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_left
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_left/tank_left_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_left_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_right/tank_right.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_right
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_right/tank_right_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_right_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_top_level.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_top_level
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_up/tank_up.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_up
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_up/tank_up_palette.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tank_up_palette
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sim_1/new/testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module color_picker_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1605.602 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot color_picker_tb_behav xil_defaultlib.color_picker_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot color_picker_tb_behav xil_defaultlib.color_picker_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'douta' [C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_map1.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'index' [C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_map1.sv:60]
+WARNING: [VRFC 10-3823] variable 'keycode' might have multiple concurrent drivers [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/color_picker.sv:52]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_left/tank_left.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_right/tank_right.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_up/tank_up.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_down/tank_down.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv:9]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_map1.sv:53]
+WARNING: [VRFC 10-5021] port 'wea' is not connected on this instance [C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base.sv:50]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv" Line 1. Module bullet_up doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_up/bullet_up_palette.sv" Line 1. Module bullet_up_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv" Line 1. Module bullet_down doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_down/bullet_down_palette.sv" Line 1. Module bullet_down_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv" Line 1. Module bullet_left doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_left/bullet_left_palette.sv" Line 1. Module bullet_left_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv" Line 1. Module bullet_right doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_right/bullet_right_palette.sv" Line 1. Module bullet_right_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_map1.sv" Line 1. Module brick doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_palette.sv" Line 1. Module brick_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base.sv" Line 1. Module base doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base_palette.sv" Line 1. Module base_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv" Line 1. Module bullet_up doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_up/bullet_up_palette.sv" Line 1. Module bullet_up_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.sv" Line 1. Module bullet_down doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_down/bullet_down_palette.sv" Line 1. Module bullet_down_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.sv" Line 1. Module bullet_left doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_left/bullet_left_palette.sv" Line 1. Module bullet_left_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.sv" Line 1. Module bullet_right doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_right/bullet_right_palette.sv" Line 1. Module bullet_right_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_map1.sv" Line 1. Module brick doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_palette.sv" Line 1. Module brick_palette doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base.sv" Line 1. Module base doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base_palette.sv" Line 1. Module base_palette doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_left_rom
+Compiling module xil_defaultlib.tank_left_palette
+Compiling module xil_defaultlib.tank_left
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_right_rom
+Compiling module xil_defaultlib.tank_right_palette
+Compiling module xil_defaultlib.tank_right
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_up_rom
+Compiling module xil_defaultlib.tank_up_palette
+Compiling module xil_defaultlib.tank_up
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.tank_down_rom
+Compiling module xil_defaultlib.tank_down_palette
+Compiling module xil_defaultlib.tank_down
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_up_rom
+Compiling module xil_defaultlib.bullet_up_palette
+Compiling module xil_defaultlib.bullet_up
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_down_rom
+Compiling module xil_defaultlib.bullet_down_palette
+Compiling module xil_defaultlib.bullet_down
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_left_rom
+Compiling module xil_defaultlib.bullet_left_palette
+Compiling module xil_defaultlib.bullet_left
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.bullet_right_rom
+Compiling module xil_defaultlib.bullet_right_palette
+Compiling module xil_defaultlib.bullet_right
+Compiling module xil_defaultlib.tank_top_level
+Compiling module xil_defaultlib.tank
+Compiling module xil_defaultlib.level_one
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.brick_rom
+Compiling module xil_defaultlib.brick_palette
+Compiling module xil_defaultlib.brick
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.base_rom
+Compiling module xil_defaultlib.base_palette
+Compiling module xil_defaultlib.base
+Compiling module xil_defaultlib.color_picker
+Compiling module xil_defaultlib.color_picker_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot color_picker_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:51 . Memory (MB): peak = 1605.602 ; gain = 0.000

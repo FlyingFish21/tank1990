@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/brick_rom_synth_1'
+HD_PWD='C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/brick_rom_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

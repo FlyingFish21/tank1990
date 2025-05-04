@@ -2,10 +2,10 @@
 verilog xil_defaultlib  --include "../../../../tank1990.gen/sources_1/bd/mb_block/ipshared/ec67/hdl" --include "../../../../tank1990.gen/sources_1/bd/mb_block/ipshared/7698" --include "../../../../tank1990.gen/sources_1/ip/clk_wiz_0" \
 "../../../../tank1990.gen/sources_1/ip/base_rom/sim/base_rom.v" \
 "../../../../tank1990.gen/sources_1/ip/brick_rom_1/sim/brick_rom.v" \
-"../../../../tank1990.gen/sources_1/ip/bullet_right_rom/sim/bullet_right_rom.v" \
-"../../../../tank1990.gen/sources_1/ip/bullet_left_rom/sim/bullet_left_rom.v" \
-"../../../../tank1990.gen/sources_1/ip/bullet_down_rom/sim/bullet_down_rom.v" \
-"../../../../tank1990.gen/sources_1/ip/bullet_up_rom/sim/bullet_up_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_right_rom_1/sim/bullet_right_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_left_rom_1/sim/bullet_left_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_down_rom_1/sim/bullet_down_rom.v" \
+"../../../../tank1990.gen/sources_1/ip/bullet_up_rom_1/sim/bullet_up_rom.v" \
 "../../../../tank1990.gen/sources_1/ip/tank_down_rom_1/sim/tank_down_rom.v" \
 "../../../../tank1990.gen/sources_1/ip/tank_up_rom_1/sim/tank_up_rom.v" \
 "../../../../tank1990.gen/sources_1/ip/tank_right_rom/sim/tank_right_rom.v" \

@@ -150,7 +150,8 @@ module color_picker(
         .TankDir(tankdir),
         .bullet_dir(bullet_dir),
         .bullet_x(bullet_x),
-        .bullet_y(bullet_y)
+        .bullet_y(bullet_y),
+        .brick_map(brick_map)
     );
     
     //Bullet

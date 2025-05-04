@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.tcl"
+  variable script "C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "tank_up_rom_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 5
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -80,19 +79,19 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.cache/wt [current_project]
-set_property parent.project_path C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/wt [current_project]
+set_property parent.project_path C:/Users/Leo/Documents/GitHub/tank1990/tank1990.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths c:/Users/flyin/Desktop/ECE_385/ECE385_provided/RD_hdmi_ip2020 [current_project]
+set_property ip_repo_paths c:/Users/Leo/Documents/GitHub/ECE385_provided/RD_hdmi_ip2020 [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_up_rom_1/tank_up_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_ooc.xdc]
+read_ip -quiet C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_up_rom_1/tank_up_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -108,7 +107,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1 -new_name tank_up_rom -ip [get_ips tank_up_rom]]
+set cacheID [config_ip_cache -export -no_bom  -dir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1 -new_name tank_up_rom -ip [get_ips tank_up_rom]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
@@ -163,32 +162,32 @@ create_report "tank_up_rom_synth_1_synth_report_utilization_0" "report_utilizati
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.dcp c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom.dcp
+  file copy -force C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.dcp c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.v
+  write_verilog -force -mode synth_stub c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.vhdl
+  write_vhdl -force -mode synth_stub c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.v
+  write_verilog -force -mode funcsim c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -198,47 +197,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.dcp c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom.dcp
+  file copy -force C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.dcp c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.v c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.v
+  file rename -force C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.v c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.vhdl c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.vhdl
+  file rename -force C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.vhdl c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.v c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.v
+  file rename -force C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.v c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.vhdl c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.vhdl
+  file rename -force C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.vhdl c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cacheID 
 
-if {[file isdir C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.ip_user_files/ip/tank_up_rom]} {
+if {[file isdir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ip/tank_up_rom]} {
   catch { 
-    file copy -force c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.v C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.ip_user_files/ip/tank_up_rom
+    file copy -force c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.v C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ip/tank_up_rom
   }
 }
 
-if {[file isdir C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.ip_user_files/ip/tank_up_rom]} {
+if {[file isdir C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ip/tank_up_rom]} {
   catch { 
-    file copy -force c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.vhdl C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.ip_user_files/ip/tank_up_rom
+    file copy -force c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.vhdl C:/Users/Leo/Documents/GitHub/tank1990/tank1990.ip_user_files/ip/tank_up_rom
   }
 }
 file delete __synthesis_is_running__

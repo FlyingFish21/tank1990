@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Thu Apr 24 22:36:05 2025
+// Date        : Thu Apr 24 22:36:04 2025
 // Host        : BOOK-U9NJ9TMQCK running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top tank_up_rom -prefix
+//               tank_up_rom_ tank_up_rom_stub.v
 // Design      : tank_up_rom
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1

@@ -75,4 +75,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_ax
 # IP: bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_axi_gpio_0_2 || ORIG_REF_NAME==mb_block_axi_gpio_0_2} -quiet] -quiet
 
-# XDC: c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/bd/mb_block/mb_block_ooc.xdc
+# XDC: c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/bd/mb_block/mb_block_ooc.xdc

@@ -5,7 +5,7 @@ module bullet_left_palette (
 
 localparam [0:1][11:0] palette = {
 	{4'hB, 4'hB, 4'hB},
-	{4'hF, 4'hF, 4'hF}
+	{4'h0, 4'h0, 4'h0}
 };
 
 assign {red, green, blue} = palette[index];
