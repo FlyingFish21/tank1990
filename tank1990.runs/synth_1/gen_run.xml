@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1746073590" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mb_usb_hdmi_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1746391863" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mb_usb_hdmi_top.dcp">
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="mb_usb_hdmi_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mb_usb_hdmi_top_reports.tcl"/>
@@ -11,6 +11,34 @@
   <File Type="VDS-TIMING-PB" Name="mb_usb_hdmi_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/mb_block/mb_block.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -221,14 +249,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/Color_Mapper.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/sprites/tank_left/tank_left.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -253,6 +273,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/sprites/base/base.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/sprites/bricks/brick.COE">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/sprites/bullet_up/bullet_up.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -265,25 +297,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/sprites/bullet_right/bullet_right.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/sprites/bullet_left/bullet_left.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/sprites/base/base.COE">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/sprites/bricks/brick.COE">
+    <File Path="$PPRDIR/sprites/bullet_right/bullet_right.COE">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -350,12 +370,8 @@
   <BlockFileSet Type="BlockSrcs" Name="mb_block_microblaze_0_axi_intc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="tank_left_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="tank_right_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="bullet_up_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="tank_up_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="tank_down_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="bullet_right_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="bullet_down_rom"/>
-  <BlockFileSet Type="BlockSrcs" Name="bullet_left_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="base_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="brick_rom"/>
 </GenRun>

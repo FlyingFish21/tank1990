@@ -94,14 +94,14 @@ add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_left/tank_left.CO
 add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_right/tank_right.COE
 add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_up/tank_up.COE
 add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_down/tank_down.COE
-add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_up/bullet_up.COE
-add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_down/bullet_down.COE
-add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_right/bullet_right.COE
-add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_left/bullet_left.COE
 add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base.COE
 add_files C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick.COE
+add_files c:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_up/bullet_up.COE
+add_files c:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_down/bullet_down.COE
+add_files c:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_left/bullet_left.COE
+add_files c:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_right/bullet_right.COE
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/flyin/Desktop/ECE_385/ECE385_provided/lab6_2_provided/design_source/VGA_controller.sv
+  C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/design_source/VGA_controller.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/base/base_palette.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bricks/brick_map1.sv
@@ -115,7 +115,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/bullet_up/bullet_up_palette.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/new/color_picker.sv
-  C:/Users/flyin/Desktop/ECE_385/ECE385_provided/lab6_2_provided/design_source/hex_driver.sv
+  C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/design_source/hex_driver.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/level_1_map.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_down/tank_down.sv
@@ -127,8 +127,20 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_top_level.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_up/tank_up.sv
   C:/Users/flyin/Desktop/ECE_385/tank1990/sprites/tank_up/tank_up_palette.sv
-  C:/Users/flyin/Desktop/ECE_385/ECE385_provided/lab6_2_provided/design_source/mb_usb_hdmi_top.sv
+  C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/imports/design_source/mb_usb_hdmi_top.sv
 }
+read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom_1/bullet_right_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom_1/bullet_left_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom_1/bullet_down_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom_1/bullet_up_rom_ooc.xdc]
+
 add_files C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/bd/mb_block/mb_block.bd
 set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0/mb_block_microblaze_0_0_ooc_debug.xdc]
@@ -184,23 +196,11 @@ set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop
 read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_right_rom/tank_right_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_right_rom/tank_right_rom_ooc.xdc]
 
-read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom/bullet_up_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_up_rom/bullet_up_rom_ooc.xdc]
-
 read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_up_rom_1/tank_up_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_up_rom_1/tank_up_rom_ooc.xdc]
 
 read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_down_rom_1/tank_down_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/tank_down_rom_1/tank_down_rom_ooc.xdc]
-
-read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom/bullet_down_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_down_rom/bullet_down_rom_ooc.xdc]
-
-read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom/bullet_left_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_left_rom/bullet_left_rom_ooc.xdc]
-
-read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom/bullet_right_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/bullet_right_rom/bullet_right_rom_ooc.xdc]
 
 read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/base_rom/base_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.gen/sources_1/ip/base_rom/base_rom_ooc.xdc]
@@ -217,8 +217,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/flyin/Desktop/ECE_385/ECE385_provided/lab6_2_provided/pin_assignment/mb_usb_hdmi_top.xdc
-set_property used_in_implementation false [get_files C:/Users/flyin/Desktop/ECE_385/ECE385_provided/lab6_2_provided/pin_assignment/mb_usb_hdmi_top.xdc]
+read_xdc C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/constrs_1/imports/pin_assignment/mb_usb_hdmi_top.xdc
+set_property used_in_implementation false [get_files C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/constrs_1/imports/pin_assignment/mb_usb_hdmi_top.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

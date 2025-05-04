@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Wed Apr 30 23:33:23 2025
+| Date             : Sun May  4 15:57:05 2025
 | Host             : BOOK-U9NJ9TMQCK running 64-bit major release  (build 9200)
 | Command          : report_power -file mb_usb_hdmi_top_power_routed.rpt -pb mb_usb_hdmi_top_power_summary_routed.pb -rpx mb_usb_hdmi_top_power_routed.rpx
 | Design           : mb_usb_hdmi_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.469        |
+| Total On-Chip Power (W)  | 0.468        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.392        |
+| Dynamic (W)              | 0.391        |
 | Device Static (W)        | 0.077        |
 | Effective TJA (C/W)      | 4.9          |
 | Max Ambient (C)          | 82.7         |
@@ -53,22 +53,22 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.015 |       12 |       --- |             --- |
-| Slice Logic              |     0.007 |     7606 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     2712 |     32600 |            8.32 |
+| Slice Logic              |     0.007 |     8412 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     2940 |     32600 |            9.02 |
 |   LUT as Distributed RAM |     0.001 |      172 |      9600 |            1.79 |
-|   Register               |    <0.001 |     2736 |     65200 |            4.20 |
-|   CARRY4                 |    <0.001 |      139 |      8150 |            1.71 |
-|   F7/F8 Muxes            |    <0.001 |       36 |     32600 |            0.11 |
+|   Register               |    <0.001 |     3206 |     65200 |            4.92 |
+|   CARRY4                 |    <0.001 |      134 |      8150 |            1.64 |
 |   LUT as Shift Register  |    <0.001 |      112 |      9600 |            1.17 |
+|   F7/F8 Muxes            |    <0.001 |      132 |     32600 |            0.40 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   Others                 |     0.000 |      893 |       --- |             --- |
-| Signals                  |     0.011 |     5084 |       --- |             --- |
+|   Others                 |     0.000 |      889 |       --- |             --- |
+| Signals                  |     0.012 |     5708 |       --- |             --- |
 | Block RAM                |     0.003 |       37 |        75 |           49.33 |
 | MMCM                     |     0.212 |        2 |         5 |           40.00 |
 | DSPs                     |     0.002 |        3 |       120 |            2.50 |
-| I/O                      |     0.141 |       42 |       210 |           20.00 |
+| I/O                      |     0.140 |       42 |       210 |           20.00 |
 | Static Power             |     0.077 |          |           |                 |
-| Total                    |     0.469 |          |           |                 |
+| Total                    |     0.468 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -81,7 +81,7 @@ Table of Contents
 | Vccint    |       1.000 |     0.051 |       0.040 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.130 |       0.118 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.042 |       0.041 |      0.001 |       NA    | Unspecified | NA         |
-| Vcco25    |       2.500 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -133,7 +133,7 @@ Table of Contents
 | Clock                                                      | Domain                                                  | Constraint (ns) |
 +------------------------------------------------------------+---------------------------------------------------------+-----------------+
 | clk_100                                                    | Clk                                                     |            10.0 |
-| clk_100                                                    | Clk_IBUF_BUFG                                           |            10.0 |
+| clk_100                                                    | Clk_IBUF                                                |            10.0 |
 | clk_out1_clk_wiz_0                                         | clk_wiz/inst/clk_out1_clk_wiz_0                         |            40.0 |
 | clk_out1_mb_block_clk_wiz_1_0                              | mb_block_i/clk_wiz_1/inst/clk_out1_mb_block_clk_wiz_1_0 |            10.0 |
 | clk_out2_clk_wiz_0                                         | clk_wiz/inst/clk_out2_clk_wiz_0                         |             8.0 |
@@ -153,12 +153,12 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| mb_usb_hdmi_top             |     0.392 |
+| mb_usb_hdmi_top             |     0.391 |
 |   clk_wiz                   |     0.106 |
 |     inst                    |     0.106 |
-|   color_instance            |     0.003 |
+|   color_instance            |     0.004 |
 |     tank_direction_instance |     0.002 |
-|   mb_block_i                |     0.138 |
+|   mb_block_i                |     0.139 |
 |     clk_wiz_1               |     0.106 |
 |       inst                  |     0.106 |
 |     gpio_usb_keycode        |     0.001 |

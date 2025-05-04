@@ -2,6 +2,7 @@
         input  logic [5:0] addr,
         output logic [39:0] data
     );
+    // 30 rows, 40 columns
         always_comb begin
             case (addr)
                 6'd0:  data = 40'b0000000000000000000000000000000000000000;

@@ -42,7 +42,7 @@ module color_picker(
     logic [3:0] base_red, base_green, base_blue;
     logic [5:0] brick_address;
     logic [39:0] brick_data;
-    
+    logic [39:0] brick_data_array;
     
     // Assign Internal Logic
     assign clk_25MHz = vga_clk;
@@ -50,6 +50,26 @@ module color_picker(
     assign drawY = DrawY;
     assign reset_ad = reset;
     assign keycode = keycode0;
+    
+    // Load starting map into array that will change as the game progresses
+    logic [39:0] brick_map [0:29]; // Array holds 40-bit data for 30 rows
+    logic init_done;
+    logic [5:0] init_addr;
+        
+    always_ff @(posedge vga_clk or posedge reset) begin
+        if (reset) begin
+            init_done <= 0;
+            init_addr <= 0;
+        end else if (!init_done) begin
+            brick_map[init_addr] <= brick_data;
+            if (init_addr == 6'd29) begin
+                init_done <= 1;
+            end else begin
+                init_addr <= init_addr + 1;
+            end
+            
+        end
+    end
     
     // Determine what is on screen
     logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;
@@ -64,13 +84,21 @@ module color_picker(
 	                       (DrawY >= tankysig) && (DrawY < tankysig + 32);
 	assign show_base = (DrawX > 303) && (DrawX < 336) && (DrawY < 480) && (DrawY > 447); // bottom center
     
-    // Brick coordinates
+    // Brick coordinates - old logic (uses map rom)
     logic [5:0] brick_row, brick_col;
     assign brick_row = DrawY[9:4];
     assign brick_col = DrawX[9:4];
     assign brick_address = drawY>>4;
-    assign show_brick = brick_data[39 - brick_col];
+    //assign show_brick = brick_data[39 - brick_col];
     
+    //New implementation
+    assign brick_data_array = brick_map[brick_address];
+    assign show_brick = brick_data_array[39 - brick_col];
+    
+    // Brick coordinates - new logic (uses array)
+    
+    
+    // Determine what color is important here
     always_ff @(posedge vga_clk) begin
         if (show_border) begin
             red <= 4'hB; // light gray - not sure
@@ -130,7 +158,8 @@ module color_picker(
 
     // Brick Map
     level_one brick_map_instance(
-    .addr(brick_address),
+    //.addr(brick_address),
+    .addr(init_addr),
     .data(brick_data)
 );
 

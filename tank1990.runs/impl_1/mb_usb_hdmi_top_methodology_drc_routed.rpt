@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed Apr 30 23:33:17 2025
+| Date         : Sun May  4 15:57:03 2025
 | Host         : BOOK-U9NJ9TMQCK running 64-bit major release  (build 9200)
 | Command      : report_methodology -file mb_usb_hdmi_top_methodology_drc_routed.rpt -pb mb_usb_hdmi_top_methodology_drc_routed.pb -rpx mb_usb_hdmi_top_methodology_drc_routed.rpx
 | Design       : mb_usb_hdmi_top
@@ -23,17 +23,18 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 92
-+-----------+------------------+----------------------------------------------------+------------+
-| Rule      | Severity         | Description                                        | Violations |
-+-----------+------------------+----------------------------------------------------+------------+
-| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 2          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 50         |
-| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
-| LUTAR-1   | Warning          | LUT drives async reset alert                       | 4          |
-| TIMING-9  | Warning          | Unknown CDC Logic                                  | 1          |
-| TIMING-18 | Warning          | Missing input or output delay                      | 33         |
-+-----------+------------------+----------------------------------------------------+------------+
+             Violations found: 93
++-----------+------------------+------------------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                                      | Violations |
++-----------+------------------+------------------------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree               | 2          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 50         |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin                        | 2          |
+| CKLD-2    | Warning          | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                     | 4          |
+| TIMING-9  | Warning          | Unknown CDC Logic                                                | 1          |
+| TIMING-18 | Warning          | Missing input or output delay                                    | 33         |
++-----------+------------------+------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -305,6 +306,11 @@ Related violations: <none>
 TIMING-27#2 Critical Warning
 Invalid primary clock on hierarchical pin  
 A primary clock mb_block_i/clk_wiz_1/inst/clk_in1 is created on an inappropriate internal pin mb_block_i/clk_wiz_1/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+CKLD-2#1 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net Clk_IBUF is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): Clk_IBUF_inst/O, HexA/Clk, clk_wiz/clk_in1, mb_block_i/clk_100MHz
 Related violations: <none>
 
 LUTAR-1#1 Warning

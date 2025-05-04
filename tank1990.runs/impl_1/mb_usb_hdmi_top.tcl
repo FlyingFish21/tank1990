@@ -142,22 +142,22 @@ OPTRACE "add files" START { }
   add_files -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/synth_1/mb_usb_hdmi_top.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
+  read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom_1/bullet_right_rom.xci
+  read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom_1/bullet_left_rom.xci
+  read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom_1/bullet_down_rom.xci
+  read_ip -quiet c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom_1/bullet_up_rom.xci
   add_files C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/bd/mb_block/mb_block.bd
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0.xci
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_left_rom_2/tank_left_rom.xci
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_right_rom/tank_right_rom.xci
-  read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_up_rom/bullet_up_rom.xci
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_up_rom_1/tank_up_rom.xci
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/tank_down_rom_1/tank_down_rom.xci
-  read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_down_rom/bullet_down_rom.xci
-  read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_left_rom/bullet_left_rom.xci
-  read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/bullet_right_rom/bullet_right_rom.xci
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/base_rom/base_rom.xci
   read_ip -quiet C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/sources_1/ip/brick_rom_1/brick_rom.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/flyin/Desktop/ECE_385/ECE385_provided/lab6_2_provided/pin_assignment/mb_usb_hdmi_top.xdc
+  read_xdc C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.srcs/constrs_1/imports/pin_assignment/mb_usb_hdmi_top.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

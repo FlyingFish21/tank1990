@@ -1,4 +1,4 @@
-23:37:31 **** Incremental Build of configuration Debug for project tank1990 ****
+16:00:10 **** Incremental Build of configuration Debug for project tank1990 ****
 make all 
 'Building file: ../src/lw_usb/MAX3421E.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -79,5 +79,5 @@ mb-size tank1990.elf  |tee "tank1990.elf.size"
 'Finished building: tank1990.elf.size'
 ' '
 
-23:37:34 Build Finished (took 2s.930ms)
+16:00:14 Build Finished (took 4s.180ms)
 

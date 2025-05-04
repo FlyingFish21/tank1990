@@ -1,2 +1,0 @@
-bullet_down_rom.v,verilog,xil_defaultlib,../../../../tank1990.gen/sources_1/ip/bullet_down_rom/sim/bullet_down_rom.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v
