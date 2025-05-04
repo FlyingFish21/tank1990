@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Sun May  4 16:39:07 2025
-# Process ID: 5500
+# Start of session at: Sun May  4 18:35:24 2025
+# Process ID: 5368
 # Current directory: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left_rom_synth_1
 # Command line: vivado.exe -log tank_left_rom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tank_left_rom.tcl
 # Log file: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left_rom_synth_1/tank_left_rom.vds
@@ -11,7 +11,6 @@
 # Running On: Leo, OS: Windows, CPU Frequency: 1797 MHz, CPU Physical cores: 16, Host memory: 10592 MB
 #-----------------------------------------------------------
 source tank_left_rom.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 374.695 ; gain = 62.109
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/Leo/Documents/GitHub/ECE385_provided/RD_hdmi_ip2020'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
@@ -24,10 +23,10 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Device 21-403] Loading part xc7s50csga324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3312
+INFO: [Synth 8-7075] Helper process launched with PID 5664
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1184.434 ; gain = 407.688
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1186.180 ; gain = 407.504
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'tank_left_rom' [c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_left_rom_2/synth/tank_left_rom.vhd:69]
 	Parameter C_FAMILY bound to: spartan7 - type: string 
@@ -209,18 +208,18 @@ WARNING: [Synth 8-7129] Port DINB[0] in module blk_mem_input_block is either unc
 WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_input_block is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished RTL Elaboration : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1514.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1517.555 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -233,32 +232,32 @@ Parsing XDC File [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left
 Finished Parsing XDC File [C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left_rom_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1514.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1517.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 1514.852 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1517.555 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:11 ; elapsed = 00:01:14 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:11 ; elapsed = 00:01:15 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left_rom_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:01:15 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:11 ; elapsed = 00:01:15 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -281,25 +280,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:16 ; elapsed = 00:01:20 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:28 ; elapsed = 00:01:32 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:32 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:28 ; elapsed = 00:01:32 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -317,37 +316,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -366,18 +365,18 @@ Report Cell Usage:
 |1     |RAMB18E1 |     1|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 138 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:01:38 . Memory (MB): peak = 1514.852 ; gain = 738.105
-Synthesis Optimization Complete : Time (s): cpu = 00:01:40 ; elapsed = 00:01:44 . Memory (MB): peak = 1514.852 ; gain = 738.105
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:45 . Memory (MB): peak = 1517.555 ; gain = 738.879
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1517.555 ; gain = 738.879
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1514.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1517.555 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1514.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1517.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -385,9 +384,10 @@ Synth Design complete, checksum: 29c46875
 INFO: [Common 17-83] Releasing license: Synthesis
 26 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:50 ; elapsed = 00:02:15 . Memory (MB): peak = 1514.852 ; gain = 1109.348
+synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1517.555 ; gain = 1113.391
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left_rom_synth_1/tank_left_rom.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP tank_left_rom, cache-ID = 0bd7af164c923d57
 INFO: [Coretcl 2-1174] Renamed 6 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_left_rom_synth_1/tank_left_rom.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file tank_left_rom_utilization_synth.rpt -pb tank_left_rom_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun May  4 16:41:50 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun May  4 18:36:27 2025...
