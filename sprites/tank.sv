@@ -219,8 +219,8 @@ always_ff @(posedge frame_clk) begin
             bullet_y <= bullet_y + bullet_dy;
 
             // Deactivate bullet if off-screen
-            if (bullet_x < Tank_X_Min || bullet_x > Tank_X_Max ||
-                bullet_y < Tank_Y_Min || bullet_y > Tank_Y_Max) begin
+            if (bullet_x+8 < Tank_X_Min || bullet_x > Tank_X_Max+32 ||
+                bullet_y+8 < Tank_Y_Min || bullet_y > Tank_Y_Max+32) begin
                 bullet_active <= 0;
             end
         end
