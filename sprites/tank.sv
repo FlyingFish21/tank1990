@@ -13,12 +13,12 @@ module tank
     input logic [39:0] brick_map [0:29]
 );
     //start location(called center for now)
-    parameter [9:0] Tank_X_Center = 256; //320 - 32/2 - 16 - 32
+    parameter [9:0] Tank_X_Center = 240; //320 - 32/2 - 16 - 32
     parameter [9:0] Tank_Y_Center = 448;       //480-32
     parameter [9:0] Tank_X_Min = 80; // account for the gray border
     parameter [9:0] Tank_X_Max = 528; // 640 - 80 - 32 - 1
     parameter [9:0] Tank_Y_Min = 0;
-    parameter [9:0] Tank_Y_Max = 447; // 480 - 32 - 1
+    parameter [9:0] Tank_Y_Max = 448; // 480 - 32 - 1
     parameter [9:0] Tank_Step = 2;
 
     logic [9:0] Tank_X_Next;
@@ -91,12 +91,54 @@ module tank
     logic [5:0] col_left, col_right, tank_col0, tank_col1;
     logic [4:0] row_top, row_bottom, tank_row0, tank_row1;
     
+    logic [5:0] tank_col0, tank_col1, tank_col2;
+    logic [4:0] tank_row0, tank_row1, tank_row2;
+    
+    //this will prevent holding down space key
+    logic prev_space_pressed, space_pressed, fire_button_edge;
+    assign space_pressed = (keycode == 8'h2C);  // spacebar code
+    
+    assign fire_button_edge = space_pressed && !prev_space_pressed;
+    
+    
     always_comb begin
     Tank_X_Next = TankX;
     Tank_Y_Next = TankY;
     TankDir_Next = TankDir;
     brick_collision = 0;
     shoot = 0;
+    
+    // W - up
+    if (keycode == 8'h1A && TankY >= Tank_Y_Min + Tank_Step) begin
+            Tank_Y_Next = tryY_up;
+            TankDir_Next = 4'b0001;
+    // S - down
+    end else if (keycode == 8'h16 && TankY <= Tank_Y_Max - Tank_Step) begin
+            Tank_Y_Next = tryY_down;
+            TankDir_Next = 4'b0010;
+    // A - left
+    end else if (keycode == 8'h04 && TankX >= Tank_X_Min + Tank_Step) begin
+            Tank_X_Next = tryX_left;
+            TankDir_Next = 4'b0100;
+    // D - right
+    end else if (keycode == 8'h07 && TankX <= Tank_X_Max - Tank_Step) begin
+            Tank_X_Next = tryX_right;
+            TankDir_Next = 4'b1000;
+    end 
+    
+    //we will check all 4 corners of tank and the midpoints
+    tank_col0 = 39 - (Tank_X_Next >> 4);
+    tank_col1 = 39 - ((Tank_X_Next + 15) >> 4);
+    tank_col2 = 39 - ((Tank_X_Next + 31) >> 4);
+    
+    tank_row0 = Tank_Y_Next >> 4;
+    tank_row1 = (Tank_Y_Next + 15) >> 4;
+    tank_row2 = (Tank_Y_Next + 31) >> 4;
+    
+    brick_collision =
+    brick_map[tank_row0][tank_col0] || brick_map[tank_row0][tank_col1] || brick_map[tank_row0][tank_col2] ||
+    brick_map[tank_row1][tank_col0] || brick_map[tank_row1][tank_col1] || brick_map[tank_row1][tank_col2] ||
+    brick_map[tank_row2][tank_col0] || brick_map[tank_row2][tank_col1] || brick_map[tank_row2][tank_col2];
 
     // Precompute reusable values
     tryX_left   = TankX - Tank_Step;
@@ -104,49 +146,6 @@ module tank
     tryY_up     = TankY - Tank_Step;
     tryY_down   = TankY + Tank_Step;
 
-    col_left    = 39- (tryX_left >> 4);        //it's STORED BACKWARDS YOOOOO
-    col_right   = 39-((tryX_right + 31) >> 4);
-    row_top     = tryY_up >> 4;
-    row_bottom  = (tryY_down + 31) >> 4;
-
-    tank_col0   = 39-(TankX >> 4);
-    tank_col1   = 39-((TankX + 31) >> 4);
-    tank_row0   = TankY >> 4;
-    tank_row1   = (TankY + 31) >> 4;
-
-    // W - up
-    if (keycode == 8'h1A && TankY >= Tank_Y_Min + Tank_Step) begin
-        brick_collision = brick_map[row_top][tank_col0] || brick_map[row_top][tank_col1];
-        if (!brick_collision) begin
-            Tank_Y_Next = tryY_up;
-            TankDir_Next = 4'b0001;
-        end
-
-    // S - down
-    end else if (keycode == 8'h16 && TankY <= Tank_Y_Max - Tank_Step) begin
-        brick_collision = brick_map[row_bottom][tank_col0] || brick_map[row_bottom][tank_col1];
-        if (!brick_collision) begin
-            Tank_Y_Next = tryY_down;
-            TankDir_Next = 4'b0010;
-        end
-
-    // A - left
-    end else if (keycode == 8'h04 && TankX >= Tank_X_Min + Tank_Step) begin
-        brick_collision = brick_map[tank_row0][col_left] || brick_map[tank_row1][col_left];
-        if (!brick_collision) begin
-            Tank_X_Next = tryX_left;
-            TankDir_Next = 4'b0100;
-        end
-
-    // D - right
-    end else if (keycode == 8'h07 && TankX <= Tank_X_Max - Tank_Step) begin
-        brick_collision = brick_map[tank_row0][col_right] || brick_map[tank_row1][col_right];
-        if (!brick_collision) begin
-            Tank_X_Next = tryX_right;
-            TankDir_Next = 4'b1000;
-        end
-
-    end 
 end
 
     //Detect if bullet hits brick
@@ -155,10 +154,10 @@ end
     
     logic bullet_hit_brick;
 
-    assign row0 = bullet_y >> 4;
-    assign col0 = 39 - (bullet_x >> 4);
-    assign row1 = (bullet_y + 7) >> 4;
-    assign col1 = 39 - ((bullet_x + 7) >> 4);
+    assign row0 = (bullet_y + bullet_dy)>> 4;
+    assign col0 = 39 - ((bullet_x+bullet_dx) >> 4);
+    assign row1 = (bullet_y +bullet_dy + 7) >> 4;
+    assign col1 = 39 - ((bullet_x +bullet_dx + 7) >> 4);
     
     assign bullet_hit_brick = bullet_active &&
         (brick_map[row0][col0] || brick_map[row0][col1] ||
@@ -174,6 +173,8 @@ end
             TankX <= Tank_X_Next;
             TankY <= Tank_Y_Next;
             TankDir <= TankDir_Next;
+        end else if (brick_collision) begin
+            TankDir <= TankDir_Next; //still allow direction to change
         end
     end
     
@@ -187,7 +188,7 @@ always_ff @(posedge frame_clk) begin
         bullet_dir <= 4'b0001;
     end else begin
         // Spawn bullet
-        if ((keycode == 8'h2C) && !bullet_active) begin
+        if (fire_button_edge && !bullet_active) begin
             bullet_active <= 1;
 
             case (1'b1)
@@ -242,6 +243,7 @@ always_ff @(posedge frame_clk) begin
             end
         end
     end
+    prev_space_pressed <= space_pressed;
 end
 
 
