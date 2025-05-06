@@ -12,9 +12,9 @@ module tank
     output logic [9:0]  bullet_y,
     input logic [39:0] brick_map [0:29]
 );
-
-    parameter [9:0] Tank_X_Center = 320;
-    parameter [9:0] Tank_Y_Center = 240;
+    //start location(called center for now)
+    parameter [9:0] Tank_X_Center = 256; //320 - 32/2 - 16 - 32
+    parameter [9:0] Tank_Y_Center = 448;       //480-32
     parameter [9:0] Tank_X_Min = 80; // account for the gray border
     parameter [9:0] Tank_X_Max = 528; // 640 - 80 - 32 - 1
     parameter [9:0] Tank_Y_Min = 0;
@@ -149,7 +149,22 @@ module tank
     end 
 end
 
+    //Detect if bullet hits brick
+    logic [4:0] row0,row1;
+    logic [5:0] col0,col1;
+    
+    logic bullet_hit_brick;
 
+    assign row0 = bullet_y >> 4;
+    assign col0 = 39 - (bullet_x >> 4);
+    assign row1 = (bullet_y + 7) >> 4;
+    assign col1 = 39 - ((bullet_x + 7) >> 4);
+    
+    assign bullet_hit_brick = bullet_active &&
+        (brick_map[row0][col0] || brick_map[row0][col1] ||
+         brick_map[row1][col0] || brick_map[row1][col1]);
+    
+    
     always_ff @(posedge frame_clk) begin
         if (Reset) begin
             TankX <= Tank_X_Center;
@@ -178,27 +193,27 @@ always_ff @(posedge frame_clk) begin
             case (1'b1)
                 TankDir[0]: begin // Up
                     bullet_dx <= 0;
-                    bullet_dy <= -2;
+                    bullet_dy <= -4;
                     bullet_x <= TankX + 12;
                     bullet_y <= TankY - 8;
                     bullet_dir <= 4'b0001;
                 end
                 TankDir[1]: begin // Down
                     bullet_dx <= 0;
-                    bullet_dy <= 2;
+                    bullet_dy <= 4;
                     bullet_x <= TankX + 12;
                     bullet_y <= TankY + 32;
                     bullet_dir <= 4'b0010;
                 end
                 TankDir[2]: begin // Left
-                    bullet_dx <= -2;
+                    bullet_dx <= -4;
                     bullet_dy <= 0;
                     bullet_x <= TankX - 8;
                     bullet_y <= TankY + 12;
                     bullet_dir <= 4'b0100;
                 end
                 TankDir[3]: begin // Right
-                    bullet_dx <= 2;
+                    bullet_dx <= 4;
                     bullet_dy <= 0;
                     bullet_x <= TankX + 32;
                     bullet_y <= TankY + 12;
@@ -217,10 +232,12 @@ always_ff @(posedge frame_clk) begin
             // Move bullet
             bullet_x <= bullet_x + bullet_dx;
             bullet_y <= bullet_y + bullet_dy;
-
+            
             // Deactivate bullet if off-screen
             if (bullet_x+8 < Tank_X_Min || bullet_x > Tank_X_Max+32 ||
                 bullet_y+8 < Tank_Y_Min || bullet_y > Tank_Y_Max+32) begin
+                bullet_active <= 0;
+            end else if (bullet_hit_brick) begin //deactivate if hit brick
                 bullet_active <= 0;
             end
         end

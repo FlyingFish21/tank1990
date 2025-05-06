@@ -2,3 +2,6 @@ Running: xsim.dir/color_picker_tb_behav/xsimk.exe -simmode gui -wdb color_picker
 Design successfully loaded
 Design Loading Memory Usage: 10372 KB (Peak: 10372 KB)
 Design Loading CPU Usage: 109 ms
+Simulation completed
+Simulation Memory Usage: 20628 KB (Peak: 20628 KB)
+Simulation CPU Usage: 6296 ms

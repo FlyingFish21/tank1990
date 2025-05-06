@@ -55,6 +55,9 @@ module color_picker(
     logic [39:0] brick_map [0:29]; // Array holds 40-bit data for 30 rows
     logic init_done;
     logic [5:0] init_addr;
+    //next variables for bullet adjacent 
+    logic [4:0] row0,row1;
+    logic [5:0] col0,col1;
         
     always_ff @(posedge vga_clk or posedge reset) begin
         if (reset) begin
@@ -68,18 +71,27 @@ module color_picker(
                 init_addr <= init_addr + 1;
             end  
         end else if (init_done && bullet_hit_brick) begin
-            brick_map[bullet_row] <= brick_map[bullet_row] & ~(40'b1 << bullet_col); //machines
+            // Mask and write row0 (top bricks)
+            brick_map[row0] <= brick_map[row0]
+                & ~(40'b1 << col0)
+                & ~(40'b1 << col1);
+    
+            // Mask and write row1 (bottom bricks)
+            brick_map[row1] <= brick_map[row1]
+                & ~(40'b1 << col0)
+                & ~(40'b1 << col1);
         end
     end
     
     //bullet hit brick logic
-    logic [4:0] bullet_row;
-    logic [5:0] bullet_col;
+    assign row0 = bullet_y >> 4;
+    assign col0 = 39 - (bullet_x >> 4);
     
-    assign bullet_row = bullet_y >> 4;
-    assign bullet_col = 39 - (bullet_x >> 4);
+    assign row1 = (bullet_y + 7) >> 4;
+    assign col1 = 39 - ((bullet_x + 7) >> 4);
+
     
-    assign bullet_hit_brick = brick_map[bullet_row][bullet_col];
+    assign bullet_hit_brick = brick_map[row0][col0] || brick_map[row0][col1] || brick_map[row1][col0] || brick_map[row1][col1];
 
     
     // Determine what is on screen
