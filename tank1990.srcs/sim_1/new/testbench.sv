@@ -37,7 +37,7 @@ module color_picker_tb;
         // Init
         vga_clk = 0;
         reset = 1;
-        vsync = 0;
+        vsync = 1;
         keycode0 = 8'h00;
         keycode = 8'h00;
         DrawX = 0;
@@ -45,6 +45,8 @@ module color_picker_tb;
 
         outfile = $fopen("vga_output.txt", "w");
 
+        #100;
+        vsync = 1;
         #100;
         reset = 0;
 

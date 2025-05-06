@@ -48,7 +48,7 @@ module color_picker(
     assign clk_25MHz = vga_clk;
     assign drawX = DrawX;
     assign drawY = DrawY;
-    assign reset_ad = reset;
+    assign reset_ah = reset;
     assign keycode = keycode0;
     
     // Load starting map into array that will change as the game progresses
@@ -66,10 +66,21 @@ module color_picker(
                 init_done <= 1;
             end else begin
                 init_addr <= init_addr + 1;
-            end
-            
+            end  
+        end else if (init_done && bullet_hit_brick) begin
+            brick_map[bullet_row] <= brick_map[bullet_row] & ~(40'b1 << bullet_col); //machines
         end
     end
+    
+    //bullet hit brick logic
+    logic [4:0] bullet_row;
+    logic [5:0] bullet_col;
+    
+    assign bullet_row = bullet_y >> 4;
+    assign bullet_col = 39 - (bullet_x >> 4);
+    
+    assign bullet_hit_brick = brick_map[bullet_row][bullet_col];
+
     
     // Determine what is on screen
     logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;
