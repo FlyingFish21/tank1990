@@ -99,12 +99,7 @@ module tank_top_level (
 
 	// Select the sprite output based on direction
 	always_ff @ (posedge vga_clk) begin
-		if (bullet_visible) begin
-            red   <= bullet_red;
-            green <= bullet_green;
-            blue  <= bullet_blue;
-	   end 
-		else if (show_tank) begin
+ 		if (show_tank) begin
 			case (1'b1)
 				TankDir[0]: begin // UP
 					red   <= tank_up_red;
@@ -127,12 +122,16 @@ module tank_top_level (
 					blue  <= tank_right_blue;
 				end
 				default: begin
-					red   <= 4'h0;
-					green <= 4'h0;
-					blue  <= 4'h0;
+					red   <= 4'hf;
+					green <= 4'hf;
+					blue  <= 4'hf;
 				end
 			endcase
-		end else begin
+		end else if (bullet_visible) begin
+            red   <= bullet_red;
+            green <= bullet_green;
+            blue  <= bullet_blue;
+	   end else begin
 			red   <= 4'h0;
 			green <= 4'h0;
 			blue  <= 4'h0;

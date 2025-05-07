@@ -10,11 +10,12 @@ module tank
     output logic [3:0]  bullet_dir,
     output logic [9:0]  bullet_x,
     output logic [9:0]  bullet_y,
+    output logic bullet_active, //tells top level whether to draw bullet or not
     input logic [39:0] brick_map [0:29]
 );
     //start location(called center for now)
-    parameter [9:0] Tank_X_Center = 240; //320 - 32/2 - 16 - 32
-    parameter [9:0] Tank_Y_Center = 448;       //480-32
+    parameter [9:0] Tank_X_Center = 230; //320 - 32/2 - 16 - 32
+    parameter [9:0] Tank_Y_Center = 240;       //480-32
     parameter [9:0] Tank_X_Min = 80; // account for the gray border
     parameter [9:0] Tank_X_Max = 528; // 640 - 80 - 32 - 1
     parameter [9:0] Tank_Y_Min = 0;
@@ -26,7 +27,6 @@ module tank
     logic [3:0] TankDir_Next;
     logic signed [9:0] bullet_dx, bullet_dy;
     logic shoot, shoot_next;
-    logic bullet_active;
     //logic [9:0] bullet_x, bullet_y;
     
     //check brick collision
@@ -88,9 +88,7 @@ module tank
     logic [9:0] tryX_left, tryX_right, tryY_up, tryY_down;
     
     // Brickmap cell indices
-    logic [5:0] col_left, col_right, tank_col0, tank_col1;
-    logic [4:0] row_top, row_bottom, tank_row0, tank_row1;
-    
+   
     logic [5:0] tank_col0, tank_col1, tank_col2;
     logic [4:0] tank_row0, tank_row1, tank_row2;
     
@@ -164,7 +162,7 @@ end
          brick_map[row1][col0] || brick_map[row1][col1]);
     
     
-    always_ff @(posedge frame_clk) begin
+    always @(posedge frame_clk or posedge Reset) begin
         if (Reset) begin
             TankX <= Tank_X_Center;
             TankY <= Tank_Y_Center;
@@ -177,7 +175,7 @@ end
             TankDir <= TankDir_Next; //still allow direction to change
         end
     end
-    
+
 always_ff @(posedge frame_clk) begin
     if (Reset) begin
         bullet_active <= 0;
@@ -236,10 +234,9 @@ always_ff @(posedge frame_clk) begin
             
             // Deactivate bullet if off-screen
             if (bullet_x+8 < Tank_X_Min || bullet_x > Tank_X_Max+32 ||
-                bullet_y+8 < Tank_Y_Min || bullet_y > Tank_Y_Max+32) begin
-                bullet_active <= 0;
-            end else if (bullet_hit_brick) begin //deactivate if hit brick
-                bullet_active <= 0;
+                bullet_y+8 < Tank_Y_Min || bullet_y > Tank_Y_Max+32 ||bullet_hit_brick) begin
+                bullet_active <= 0; //deactivate if hit brick
+                //set bullet_active to 0
             end
         end
     end

@@ -98,6 +98,7 @@ module color_picker(
     logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;
     
     //bullet logic
+    logic bullet_active; //if bullet is firing rn
     logic [3:0] bullet_dir;
     logic [9:0] bullet_x, bullet_y;
     
@@ -131,7 +132,11 @@ module color_picker(
             red   <= base_red;
             green <= base_green;
             blue  <= base_blue;
-        end else if (show_tank || bullet_visible) begin
+        end else if (show_tank) begin
+            red   <= tank_red;
+            green <= tank_green;
+            blue  <= tank_blue;
+        end else if (bullet_active && bullet_visible) begin //we remove bullet if collision
             red   <= tank_red;
             green <= tank_green;
             blue  <= tank_blue;
@@ -174,7 +179,8 @@ module color_picker(
         .bullet_dir(bullet_dir),
         .bullet_x(bullet_x),
         .bullet_y(bullet_y),
-        .brick_map(brick_map)
+        .brick_map(brick_map),
+        .bullet_active(bullet_active)
     );
     
     //Bullet
