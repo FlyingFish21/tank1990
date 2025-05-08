@@ -11,48 +11,56 @@ module enemy_ai_controller(
     output logic fire
 );
 
-    // Simple timer counters
-    logic [15:0] move_counter;
-    logic [15:0] fire_counter;
+    // Counters
+    logic [9:0] move_counter;
+    logic [5:0] fire_counter;
 
-    // Current direction (1 = up, 2 = down, 3 = left, 4 = right)
+    // LFSR for randomness
+    logic [3:0] lfsr;
+
+    // Movement direction encoded: 0 = up, 1 = down, 2 = left, 3 = right
     logic [1:0] direction;
 
-    // Move direction logic
+    // Random direction generator (LFSR)
+    always_ff @(posedge clk or posedge Reset) begin
+        if (Reset)
+            lfsr <= 4'b1011;
+        else begin
+            lfsr <= {lfsr[2:0], lfsr[3] ^ lfsr[2]};
+        end
+    end
+
+    // Change direction every ~120 frames (faster than before)
     always_ff @(posedge clk or posedge Reset) begin
         if (Reset) begin
             move_counter <= 0;
-            direction <= 2'd0;
+            direction <= 0;
         end else begin
             move_counter <= move_counter + 1;
-
-            // Change direction every ~40 frames
-            if (move_counter == 16'd1000) begin
+            if (move_counter >= 10'd120) begin
                 move_counter <= 0;
-                direction <= direction + 1;
-                if (direction == 2'd3)
-                    direction <= 0;
+                direction <= lfsr[1:0]; // random 2-bit direction
             end
         end
     end
 
-    // Fire timing logic
+    // Fire every ~60 frames
     always_ff @(posedge clk or posedge Reset) begin
         if (Reset)
             fire_counter <= 0;
-        else if (fire_counter < 16'd1500)
+        else if (fire_counter < 6'd60)
             fire_counter <= fire_counter + 1;
         else
             fire_counter <= 0;
     end
 
-    assign fire = (fire_counter == 16'd1499); // one-cycle fire pulse
+    assign fire = (fire_counter == 6'd59);
 
-    // Movement direction control
+    // Movement control based on direction
     always_comb begin
-        move_up = 0;
-        move_down = 0;
-        move_left = 0;
+        move_up    = 0;
+        move_down  = 0;
+        move_left  = 0;
         move_right = 0;
 
         case (direction)
