@@ -49,6 +49,9 @@ module color_picker(
     logic enemy_bullet_visible;
     logic [3:0] enemy_tank_red, enemy_tank_green, enemy_tank_blue;
     logic enemy_show_tank;
+    logic [4:0] enemy_row0, enemy_row1; //detect bullet hit bricks
+    logic [5:0] enemy_col0, enemy_col1;
+    logic enemy_bullet_hit_brick;
     
     // Control signals from AI
     logic enemy_move_up, enemy_move_down, enemy_move_left, enemy_move_right, enemy_fire;
@@ -79,16 +82,15 @@ module color_picker(
             end else begin
                 init_addr <= init_addr + 1;
             end  
-        end else if (init_done && bullet_hit_brick) begin
-            // Mask and write row0 (top bricks) - set brick thats hit to 0
-            brick_map[row0] <= brick_map[row0]
-                & ~(40'b1 << col0)
-                & ~(40'b1 << col1);
-    
-            // Mask and write row1 (bottom bricks)
-            brick_map[row1] <= brick_map[row1]
-                & ~(40'b1 << col0)
-                & ~(40'b1 << col1);
+        end else if (init_done && (bullet_hit_brick || enemy_bullet_hit_brick)) begin
+            if (bullet_hit_brick) begin
+                brick_map[row0] <= brick_map[row0] & ~(40'b1 << col0) & ~(40'b1 << col1);
+                brick_map[row1] <= brick_map[row1] & ~(40'b1 << col0) & ~(40'b1 << col1);
+            end
+            if (enemy_bullet_hit_brick) begin
+                brick_map[enemy_row0] <= brick_map[enemy_row0] & ~(40'b1 << enemy_col0) & ~(40'b1 << enemy_col1);
+                brick_map[enemy_row1] <= brick_map[enemy_row1] & ~(40'b1 << enemy_col0) & ~(40'b1 << enemy_col1);
+            end
         end
     end
     
@@ -106,6 +108,16 @@ module color_picker(
     
     assign bullet_hit_brick = brick_map[row0][col0] || brick_map[row0][col1] || brick_map[row1][col0] || brick_map[row1][col1];
 
+    // Enemy bullet hit logic
+    
+    assign enemy_row0 = enemy_bullet_y >> 4;
+    assign enemy_col0 = 39 - (enemy_bullet_x >> 4);
+    
+    assign enemy_row1 = (enemy_bullet_y + 7) >> 4;
+    assign enemy_col1 = 39 - ((enemy_bullet_x + 7) >> 4);
+    
+    assign enemy_bullet_hit_brick = (brick_map[enemy_row0][enemy_col0] || brick_map[enemy_row0][enemy_col1] ||
+         brick_map[enemy_row1][enemy_col0] || brick_map[enemy_row1][enemy_col1]);
     
     // Determine what is on screen
     logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;

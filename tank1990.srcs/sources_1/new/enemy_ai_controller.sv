@@ -3,7 +3,8 @@ module enemy_ai_controller(
     input  logic Reset,
     input  logic [9:0] TankX,
     input  logic [9:0] TankY,
-    
+    input  logic blocked,  // NEW: high if tank is stuck
+
     output logic move_up,
     output logic move_down,
     output logic move_left,
@@ -11,40 +12,41 @@ module enemy_ai_controller(
     output logic fire
 );
 
-    // Counters
+    // 8-bit LFSR for better randomness
+    logic [7:0] lfsr;
+
+    // Direction: 0 = up, 1 = down, 2 = left, 3 = right
+    logic [1:0] direction;
+
+    // Movement and fire counters
     logic [9:0] move_counter;
     logic [5:0] fire_counter;
 
-    // LFSR for randomness
-    logic [3:0] lfsr;
-
-    // Movement direction encoded: 0 = up, 1 = down, 2 = left, 3 = right
-    logic [1:0] direction;
-
-    // Random direction generator (LFSR)
+    // Random direction generation
     always_ff @(posedge clk or posedge Reset) begin
         if (Reset)
-            lfsr <= 4'b1011;
-        else begin
-            lfsr <= {lfsr[2:0], lfsr[3] ^ lfsr[2]};
-        end
+            lfsr <= 8'b1011_0101;
+        else
+            lfsr <= {lfsr[6:0], lfsr[7] ^ lfsr[5] ^ lfsr[4] ^ lfsr[3]};
     end
 
-    // Change direction every ~120 frames (faster than before)
+    // Movement direction logic with blocked detection
     always_ff @(posedge clk or posedge Reset) begin
         if (Reset) begin
             move_counter <= 0;
             direction <= 0;
         end else begin
             move_counter <= move_counter + 1;
-            if (move_counter >= 10'd120) begin
+
+            // change direction on timer expiry or wall hit
+            if (move_counter >= (10'd100 + {6'd0, lfsr[3:0]}) || blocked) begin
                 move_counter <= 0;
-                direction <= lfsr[1:0]; // random 2-bit direction
+                direction <= lfsr[1:0];  // random new direction
             end
         end
     end
 
-    // Fire every ~60 frames
+    // Fire roughly every 60 frames
     always_ff @(posedge clk or posedge Reset) begin
         if (Reset)
             fire_counter <= 0;
@@ -56,7 +58,7 @@ module enemy_ai_controller(
 
     assign fire = (fire_counter == 6'd59);
 
-    // Movement control based on direction
+    // Movement output
     always_comb begin
         move_up    = 0;
         move_down  = 0;
