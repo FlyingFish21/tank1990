@@ -197,7 +197,7 @@ module mb_usb_hdmi_top(
         .vsync(vsync),
         .DrawX(drawX),
         .DrawY(drawY),
-        .keycode(keycode0_gpio[7:0]),
+        .keycode0(keycode0_gpio[7:0]),
         .red(red),
         .green(green),
         .blue(blue)

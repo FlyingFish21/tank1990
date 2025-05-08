@@ -26,18 +26,14 @@ module color_picker(
     input  logic vsync,
     input  logic [7:0] keycode0,
 	input  logic [9:0] DrawX, DrawY,
-	input  logic [7:0]  keycode,
-
 	output logic [3:0] red, green, blue
     );
     // Internal Logic
     logic clk_25MHz;
     logic reset_ah;
-    logic vsync;
     logic [9:0] drawX, drawY;
     logic [9:0] tankxsig, tankysig;
     logic [3:0] tankdir;
-    logic [7:0] keycode;
     logic [3:0] brick_red, brick_green, brick_blue, tank_red, tank_blue, tank_green;
     logic [3:0] base_red, base_green, base_blue;
     logic [5:0] brick_address;
@@ -49,7 +45,6 @@ module color_picker(
     assign drawX = DrawX;
     assign drawY = DrawY;
     assign reset_ah = reset;
-    assign keycode = keycode0;
     
     // Load starting map into array that will change as the game progresses
     logic [39:0] brick_map [0:29]; // Array holds 40-bit data for 30 rows
@@ -166,6 +161,19 @@ module color_picker(
         .bullet_y(bullet_y),
         .bullet_visible(bullet_visible)
     );
+    
+    logic move_up, move_down, move_left, move_right, fire;
+    
+    player_controller controls (
+    .clk(vsync),
+    .Reset(Reset),
+    .keycode(keycode0),
+    .move_up(move_up),
+    .move_down(move_down),
+    .move_left(move_left),
+    .move_right(move_right),
+    .fire(fire)
+    );
     //Tank Module
     tank tank_instance(
         .Reset(reset_ah),
@@ -178,7 +186,12 @@ module color_picker(
         .bullet_x(bullet_x),
         .bullet_y(bullet_y),
         .brick_map(brick_map),
-        .bullet_active(bullet_active)
+        .bullet_active(bullet_active),
+        .move_up(move_up),
+        .move_down(move_down),
+        .move_left(move_left),
+        .move_right(move_right),
+        .fire(fire)
     );
     
     //Bullet
