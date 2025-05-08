@@ -21,7 +21,6 @@ module color_picker_tb;
         .keycode0(keycode0),
         .DrawX(DrawX),
         .DrawY(DrawY),
-        .keycode(keycode),
         .red(red),
         .green(green),
         .blue(blue)

@@ -92,6 +92,10 @@ module color_picker(
         end
     end
     
+    //bullet logic
+    logic bullet_active; //if bullet is firing rn
+    logic [3:0] bullet_dir;
+    logic [9:0] bullet_x, bullet_y;
     //bullet hit brick logic
     assign row0 = bullet_y >> 4;
     assign col0 = 39 - (bullet_x >> 4);
@@ -106,15 +110,13 @@ module color_picker(
     // Determine what is on screen
     logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;
     
-    //bullet logic
-    logic bullet_active; //if bullet is firing rn
-    logic [3:0] bullet_dir;
-    logic [9:0] bullet_x, bullet_y;
-    
     assign show_border = (DrawX < 80) || (DrawX > 559); // 5 columns on either side
     assign show_tank = (DrawX >= tankxsig) && (DrawX < tankxsig + 32) &&
 	                       (DrawY >= tankysig) && (DrawY < tankysig + 32);
 	assign show_base = (DrawX > 303) && (DrawX < 336) && (DrawY < 480) && (DrawY > 447); // bottom center
+    
+    assign enemy_show_tank = (DrawX >= enemy_tank_x) && (DrawX < enemy_tank_x + 32) &&
+                         (DrawY >= enemy_tank_y) && (DrawY < enemy_tank_y + 32);
     
     // Brick coordinates - old logic (uses map rom)
     logic [5:0] brick_row, brick_col;
