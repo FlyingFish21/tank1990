@@ -19,7 +19,11 @@ module tank # (
     input logic move_down,
     input logic move_left,
     input logic move_right,
-    input logic fire
+    input logic fire,
+    output logic blocked,  // NEW
+    input logic [9:0] bullet_x_in,
+    input logic [9:0] bullet_y_in,
+    input logic       bullet_active_in
 );
     //start location(called center for now)
     parameter [9:0] Tank_X_Min = 80; // account for the gray border
@@ -33,6 +37,7 @@ module tank # (
     logic [3:0] TankDir_Next;
     logic signed [9:0] bullet_dx, bullet_dy;
     logic shoot, shoot_next;
+    logic moved;
     //logic [9:0] bullet_x, bullet_y;
     
     //check brick collision
@@ -100,7 +105,15 @@ module tank # (
     tryY_down   = TankY + Tank_Step;
 
 end
+    //for detecting if this tank is hit by incoming bullet
+    logic got_hit;
 
+    assign got_hit = bullet_active_in &&
+                     bullet_x_in + 7 >= TankX &&
+                     bullet_x_in <= TankX + 31 &&
+                     bullet_y_in + 7 >= TankY &&
+                     bullet_y_in <= TankY + 31;
+    
     //Detect if bullet hits brick
     logic [4:0] row0,row1;
     logic [5:0] col0,col1;
@@ -115,10 +128,32 @@ end
     assign bullet_hit_brick = bullet_active &&
         (brick_map[row0][col0] || brick_map[row0][col1] ||
          brick_map[row1][col0] || brick_map[row1][col1]);
+        
+    always_comb begin
+        logic boundary_blocked;
+    
+        boundary_blocked = 0;
+    
+        // Check screen boundaries
+        if ((move_up    && TankY <= Tank_Y_Min + Tank_Step) ||
+            (move_down  && TankY >= Tank_Y_Max - Tank_Step) ||
+            (move_left  && TankX <= Tank_X_Min + Tank_Step) ||
+            (move_right && TankX >= Tank_X_Max - Tank_Step)) begin
+            boundary_blocked = 1;
+        end
+    
+        // Final blocked signal = brick OR boundary block
+        if ((move_up || move_down || move_left || move_right) &&
+            (brick_collision || boundary_blocked))
+            blocked = 1;
+        else
+            blocked = 0;
+    end
+    
     
     
     always @(posedge frame_clk or posedge Reset) begin
-        if (Reset) begin
+        if (Reset  || got_hit) begin
             TankX <= Tank_X_Center;
             TankY <= Tank_Y_Center;
             TankDir <= Tank_Dir_Spawn; // Default facing up
@@ -130,7 +165,7 @@ end
             bullet_dir <= 4'b0001;
         end else begin
             TankDir <= TankDir_Next; //still allow direction to change
-            
+           
             if (!brick_collision) begin //no collide with brick then we update position, else it stays the same
                 TankX <= Tank_X_Next;
                 TankY <= Tank_Y_Next;

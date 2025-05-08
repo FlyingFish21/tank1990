@@ -218,7 +218,10 @@ module color_picker(
         .move_down(move_down),
         .move_left(move_left),
         .move_right(move_right),
-        .fire(fire)
+        .fire(fire),
+        .bullet_x_in(enemy_bullet_x),
+        .bullet_y_in(enemy_bullet_y),
+        .bullet_active_in(enemy_bullet_active)
     );
     
     //Bullet
@@ -255,6 +258,8 @@ module color_picker(
         .green(base_green)
     );
     
+    logic enemy_ai_one_blocked;
+    
     enemy_ai_controller enemy_ai (
         .clk(vsync),
         .Reset(reset),
@@ -264,7 +269,8 @@ module color_picker(
         .move_down(enemy_move_down),
         .move_left(enemy_move_left),
         .move_right(enemy_move_right),
-        .fire(enemy_fire)
+        .fire(enemy_fire),
+        .blocked(enemy_ai_one_blocked)
     );
     
     
@@ -287,7 +293,11 @@ module color_picker(
         .move_down(enemy_move_down),
         .move_left(enemy_move_left),
         .move_right(enemy_move_right),
-        .fire(enemy_fire)
+        .fire(enemy_fire),
+        .blocked(enemy_ai_one_blocked),
+        .bullet_x_in(bullet_x),
+        .bullet_y_in(bullet_y),
+        .bullet_active_in(bullet_active)
     );
     
     tank_top_level enemy_renderer (
