@@ -114,6 +114,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.sv
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_up/bullet_up_palette.sv
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/color_picker.sv
+  C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_ai_controller.sv
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/design_source/hex_driver.sv
   C:/Users/Leo/Documents/GitHub/tank1990/level_1_map.sv
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/player_controller.sv

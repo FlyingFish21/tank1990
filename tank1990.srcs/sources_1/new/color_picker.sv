@@ -40,6 +40,19 @@ module color_picker(
     logic [39:0] brick_data;
     logic [39:0] brick_data_array;
     
+    // Enemy tank signals
+    logic [9:0] enemy_tank_x, enemy_tank_y;
+    logic [3:0] enemy_tank_dir;
+    logic [9:0] enemy_bullet_x, enemy_bullet_y;
+    logic [3:0] enemy_bullet_dir;
+    logic enemy_bullet_active;
+    logic enemy_bullet_visible;
+    logic [3:0] enemy_tank_red, enemy_tank_green, enemy_tank_blue;
+    logic enemy_show_tank;
+    
+    // Control signals from AI
+    logic enemy_move_up, enemy_move_down, enemy_move_left, enemy_move_right, enemy_fire;
+    
     // Assign Internal Logic
     assign clk_25MHz = vga_clk;
     assign drawX = DrawX;
@@ -125,14 +138,14 @@ module color_picker(
             red   <= base_red;
             green <= base_green;
             blue  <= base_blue;
-        end else if (show_tank) begin
+        end else if (show_tank || (bullet_active && bullet_visible)) begin
             red   <= tank_red;
             green <= tank_green;
             blue  <= tank_blue;
-        end else if (bullet_active && bullet_visible) begin //we remove bullet if collision
-            red   <= tank_red;
-            green <= tank_green;
-            blue  <= tank_blue;
+        end else if (enemy_show_tank || (enemy_bullet_active && enemy_bullet_visible)) begin //we remove bullet if collision
+            red   <= enemy_tank_red;
+            green <= enemy_tank_green;
+            blue  <= enemy_tank_blue;
         end else if (show_brick) begin
             red   <= brick_red;
             green <= brick_green;
@@ -228,6 +241,56 @@ module color_picker(
         .green(base_green)
     );
     
+    enemy_ai_controller enemy_ai (
+        .clk(vsync),
+        .Reset(reset),
+        .TankX(enemy_tank_x),
+        .TankY(enemy_tank_y),
+        .move_up(enemy_move_up),
+        .move_down(enemy_move_down),
+        .move_left(enemy_move_left),
+        .move_right(enemy_move_right),
+        .fire(enemy_fire)
+    );
     
     
+    tank #(
+    .Tank_X_Center(400),
+    .Tank_Y_Center(0),
+    .Tank_Dir_Spawn(4'b0010)
+    ) enemy_tank (
+        .Reset(reset),
+        .frame_clk(vsync),
+        .TankX(enemy_tank_x),
+        .TankY(enemy_tank_y),
+        .TankDir(enemy_tank_dir),
+        .bullet_dir(enemy_bullet_dir),
+        .bullet_x(enemy_bullet_x),
+        .bullet_y(enemy_bullet_y),
+        .bullet_active(enemy_bullet_active),
+        .brick_map(brick_map),
+        .move_up(enemy_move_up),
+        .move_down(enemy_move_down),
+        .move_left(enemy_move_left),
+        .move_right(enemy_move_right),
+        .fire(enemy_fire)
+    );
+    
+    tank_top_level enemy_renderer (
+    .vga_clk(clk_25MHz),
+    .DrawX(drawX),
+    .DrawY(drawY),
+    .tankx(enemy_tank_x),
+    .tanky(enemy_tank_y),
+    .TankDir(enemy_tank_dir),
+    .bullet_dir(enemy_bullet_dir),
+    .bullet_x(enemy_bullet_x),
+    .bullet_y(enemy_bullet_y),
+    .bullet_visible(enemy_bullet_visible),
+    .show_tank(enemy_show_tank),
+    .red(enemy_tank_red),
+    .green(enemy_tank_green),
+    .blue(enemy_tank_blue)
+);
+
 endmodule
