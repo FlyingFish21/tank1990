@@ -26,8 +26,16 @@ module color_picker(
     input  logic vsync,
     input  logic [7:0] keycode0,
 	input  logic [9:0] DrawX, DrawY,
-	output logic [3:0] red, green, blue
+	output logic [3:0] red, green, blue,
+	output logic [1:0] player_lives,       // 0 to 3
+    output logic [3:0] enemy_lives     // 0 to 8
     );
+    //lives calculation
+    logic player_dead, enemy_dead; // drive these into tank modules
+    logic player_got_hit, enemy_got_hit; // from tank modules
+    logic player_got_hit_prev, enemy_got_hit_prev;
+    wire  player_got_hit_pulse, enemy_got_hit_pulse;
+   
     // Internal Logic
     logic clk_25MHz;
     logic reset_ah;
@@ -70,11 +78,18 @@ module color_picker(
     logic [4:0] row0,row1;
     logic [5:0] col0,col1;
     
+    assign player_got_hit_pulse = player_got_hit && !player_got_hit_prev;
+    assign enemy_got_hit_pulse  = enemy_got_hit  && !enemy_got_hit_prev;
+    
     // initialize brick map
     always_ff @(posedge vga_clk or posedge reset) begin
         if (reset) begin
             init_done <= 0;
             init_addr <= 0;
+            player_lives <= 2'd3;
+            enemy_lives  <= 4'd8;
+            player_got_hit_prev <= 0;
+            enemy_got_hit_prev  <= 0;
         end else if (!init_done) begin
             brick_map[init_addr] <= brick_data;
             if (init_addr == 6'd29) begin
@@ -91,8 +106,24 @@ module color_picker(
                 brick_map[enemy_row0] <= brick_map[enemy_row0] & ~(40'b1 << enemy_col0) & ~(40'b1 << enemy_col1);
                 brick_map[enemy_row1] <= brick_map[enemy_row1] & ~(40'b1 << enemy_col0) & ~(40'b1 << enemy_col1);
             end
+        end else begin
+            player_got_hit_prev <= player_got_hit;
+            enemy_got_hit_prev  <= enemy_got_hit;
+            if (player_got_hit_pulse  && player_lives > 0)
+                player_lives <= player_lives - 1;
+            else
+                player_lives <= player_lives; // hold value
+            
+            if (enemy_got_hit_pulse && enemy_lives > 0)
+                enemy_lives <= enemy_lives - 1;
+            else
+                enemy_lives <= enemy_lives; // hold value
         end
     end
+    
+    assign player_dead = (player_lives == 0);
+    assign enemy_dead  = (enemy_lives == 0);
+
     
     //bullet logic
     logic bullet_active; //if bullet is firing rn
@@ -171,8 +202,8 @@ module color_picker(
         end
     end
     
-    //Tank Top Level
-    tank_top_level tank_direction_instance(
+    //Tank Top Level, renderer for my tank
+    tank_top_level tank_direction_instance( 
         .vga_clk(clk_25MHz),
         .DrawX(drawX),
         .DrawY(drawY),
@@ -186,7 +217,8 @@ module color_picker(
         .bullet_dir(bullet_dir),
         .bullet_x(bullet_x),
         .bullet_y(bullet_y),
-        .bullet_visible(bullet_visible)
+        .bullet_visible(bullet_visible),
+        .is_enemy(0)
     );
     
     logic move_up, move_down, move_left, move_right, fire;
@@ -221,7 +253,9 @@ module color_picker(
         .fire(fire),
         .bullet_x_in(enemy_bullet_x),
         .bullet_y_in(enemy_bullet_y),
-        .bullet_active_in(enemy_bullet_active)
+        .bullet_active_in(enemy_bullet_active),
+        .got_hit(player_got_hit),
+        .dead(player_dead)
     );
     
     //Bullet
@@ -297,7 +331,9 @@ module color_picker(
         .blocked(enemy_ai_one_blocked),
         .bullet_x_in(bullet_x),
         .bullet_y_in(bullet_y),
-        .bullet_active_in(bullet_active)
+        .bullet_active_in(bullet_active),
+        .got_hit(enemy_got_hit),
+        .dead(enemy_dead)
     );
     
     tank_top_level enemy_renderer (
@@ -314,7 +350,8 @@ module color_picker(
     .show_tank(enemy_show_tank),
     .red(enemy_tank_red),
     .green(enemy_tank_green),
-    .blue(enemy_tank_blue)
+    .blue(enemy_tank_blue),
+    .is_enemy(1)
 );
 
 endmodule

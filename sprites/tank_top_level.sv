@@ -7,7 +7,8 @@ module tank_top_level (
 	input logic [3:0] bullet_dir,
     input logic [9:0]   bullet_x, bullet_y,
     input logic show_tank,
-    output logic bullet_visible
+    output logic bullet_visible,
+    input logic is_enemy
 );
 
 	// Common sprite and palette wiring
@@ -144,7 +145,8 @@ module tank_top_level (
 		.rom_address (rom_address),
 		.red         (tank_left_red),
 		.green       (tank_left_green),
-		.blue        (tank_left_blue)
+		.blue        (tank_left_blue),
+		.enemy (is_enemy)
 	);
 
 	tank_right tank_right (
@@ -152,7 +154,8 @@ module tank_top_level (
 		.rom_address (rom_address),
 		.red         (tank_right_red),
 		.green       (tank_right_green),
-		.blue        (tank_right_blue)
+		.blue        (tank_right_blue),
+		.enemy (is_enemy)
 	);
 
 	tank_up tank_up (
@@ -160,7 +163,8 @@ module tank_top_level (
 		.rom_address (rom_address),
 		.red         (tank_up_red),
 		.green       (tank_up_green),
-		.blue        (tank_up_blue)
+		.blue        (tank_up_blue),
+		.enemy (is_enemy)
 	);
 
 	tank_down tank_down (
@@ -168,7 +172,8 @@ module tank_top_level (
 		.rom_address (rom_address),
 		.red         (tank_down_red),
 		.green       (tank_down_green),
-		.blue        (tank_down_blue)
+		.blue        (tank_down_blue),
+		.enemy (is_enemy)
 	);
 	
 	bullet_up bullet_up (

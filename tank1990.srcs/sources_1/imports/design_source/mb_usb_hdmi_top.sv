@@ -53,13 +53,19 @@ module mb_usb_hdmi_top(
     logic reset_ah;
     
     assign reset_ah = reset_rtl_0;
-    
+    logic [1:0] player_lives;       // 0 to 3
+    logic [3:0] enemy_lives;    // 0 to 8
     
     //Keycode HEX drivers
     hex_driver HexA (
         .clk(Clk),
         .reset(reset_ah),
-        .in({keycode0_gpio[31:28], keycode0_gpio[27:24], keycode0_gpio[23:20], keycode0_gpio[19:16]}),
+        .in({
+            4'b0000,                // unused or reserved
+            {player_lives, 2'b00},    // player lives as 4 bits
+            enemy_lives,            // 4 bits
+            keycode0_gpio[19:16]    // last digit
+        }),
         .hex_seg(hex_segA),
         .hex_grid(hex_gridA)
     );
@@ -136,59 +142,6 @@ module mb_usb_hdmi_top(
         .TMDS_DATA_N(hdmi_tmds_data_n)          
     );
 
-    /*
-    //Tank Module
-    tank tank_instance(
-        .Reset(reset_ah),
-        .frame_clk(vsync),                    //Figure out what this should be so that the ball will move
-        .keycode(keycode0_gpio[7:0]),    //Notice: only one keycode connected to ball by default
-        .TankX(tankxsig),
-        .TankY(tankysig),
-        .TankDir(tankdir)
-        
-    );
-    
-    //Color Mapper Module   
-    color_mapper color_instance(
-        .BallX(ballxsig),
-        .BallY(ballysig),
-        .pTankX(ptankxsig),
-        .pTankY(ptankysig),
-        .pTankXsize(ptankxsize),
-        .pTankYsize(ptankysize),
-        .DrawX(drawX),
-        .DrawY(drawY),
-        .Ball_size(ballsizesig),
-        .Red(red),
-        .Green(green),
-        .Blue(blue)
-    );*/
-    /*
-    //Tank Top Level
-    tank_top_level tank_direction_instance(
-        .vga_clk(clk_25MHz),
-        .DrawX(drawX),
-        .DrawY(drawY),
-        .tankx(tankxsig),
-        .tanky(tankysig),
-        .TankDir(tankdir),
-        .red(red),
-        .blue(blue),
-        .green(green)
-    );
-    
-    //Bullet
-    //bullet bullet_instance();
-    
-    // Brick Map Generation
-    brick_map1 brick_instance(
-        .vga_clk(clk_25MHz),
-        .DrawX(drawX),
-        .DrawY(drawY),
-        .red(red),
-        .blue(blue),
-        .green(green)
-    );*/
     
     // Top Level to Decide Color Logic
     color_picker color_instance(
@@ -200,7 +153,9 @@ module mb_usb_hdmi_top(
         .keycode0(keycode0_gpio[7:0]),
         .red(red),
         .green(green),
-        .blue(blue)
+        .blue(blue),
+        .player_lives(player_lives),
+        .enemy_lives(enemy_lives)
     );
     
 endmodule

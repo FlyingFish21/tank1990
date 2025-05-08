@@ -1,7 +1,7 @@
 module tank # (
     parameter [3:0] Tank_Dir_Spawn = 4'b0001,
     parameter [9:0] Tank_X_Center = 230, //320 - 32/2 - 16 - 32
-    parameter [9:0] Tank_Y_Center = 240       //480-32
+    parameter [9:0] Tank_Y_Center = 440       //480-32
 )( 
     input  logic        Reset, 
     input  logic        frame_clk,
@@ -23,7 +23,9 @@ module tank # (
     output logic blocked,  // NEW
     input logic [9:0] bullet_x_in,
     input logic [9:0] bullet_y_in,
-    input logic       bullet_active_in
+    input logic       bullet_active_in,
+    output logic       got_hit,    // goes high for one cycle on hit
+    input logic       dead        // top-level tells tank it's out of lives 
 );
     //start location(called center for now)
     parameter [9:0] Tank_X_Min = 80; // account for the gray border
@@ -37,7 +39,6 @@ module tank # (
     logic [3:0] TankDir_Next;
     logic signed [9:0] bullet_dx, bullet_dy;
     logic shoot, shoot_next;
-    logic moved;
     //logic [9:0] bullet_x, bullet_y;
     
     //check brick collision
@@ -106,7 +107,7 @@ module tank # (
 
 end
     //for detecting if this tank is hit by incoming bullet
-    logic got_hit;
+    logic got_hit_internal;
 
     assign got_hit = bullet_active_in &&
                      bullet_x_in + 7 >= TankX &&
@@ -150,7 +151,7 @@ end
             blocked = 0;
     end
     
-    
+    //logic got_hit_prev;
     
     always @(posedge frame_clk or posedge Reset) begin
         if (Reset  || got_hit) begin
@@ -163,69 +164,76 @@ end
             bullet_x <= 0;
             bullet_y <= 0;
             bullet_dir <= 4'b0001;
+            //got_hit <= 0;
+            //got_hit_prev <= 0;
         end else begin
-            TankDir <= TankDir_Next; //still allow direction to change
-           
-            if (!brick_collision) begin //no collide with brick then we update position, else it stays the same
-                TankX <= Tank_X_Next;
-                TankY <= Tank_Y_Next;
-            end
+            //got_hit <= got_hit_internal && !got_hit_prev;
+            //got_hit_prev <= got_hit_internal;  //edge detection
             
-            // Spawn bullet
-            if (fire && !bullet_active) begin
-                bullet_active <= 1;
-    
-                case (1'b1)
-                    TankDir[0]: begin // Up
-                        bullet_dx <= 0;
-                        bullet_dy <= -8;
-                        bullet_x <= TankX + 12;
-                        bullet_y <= TankY - 8;
-                        bullet_dir <= 4'b0001;
-                    end
-                    TankDir[1]: begin // Down
-                        bullet_dx <= 0;
-                        bullet_dy <= 8;
-                        bullet_x <= TankX + 12;
-                        bullet_y <= TankY + 32;
-                        bullet_dir <= 4'b0010;
-                    end
-                    TankDir[2]: begin // Left
-                        bullet_dx <= -8;
-                        bullet_dy <= 0;
-                        bullet_x <= TankX - 8;
-                        bullet_y <= TankY + 12;
-                        bullet_dir <= 4'b0100;
-                    end
-                    TankDir[3]: begin // Right
-                        bullet_dx <= 8;
-                        bullet_dy <= 0;
-                        bullet_x <= TankX + 32;
-                        bullet_y <= TankY + 12;
-                        bullet_dir <= 4'b1000;
-                    end
-                    default: begin
-                        bullet_dx <= 0;
-                        bullet_dy <= 0;
-                        bullet_x <= TankX + 12;
-                        bullet_y <= TankY + 12;
-                        bullet_dir <= 4'b0001;
-                    end
-                endcase
-    
-            end else if (bullet_active) begin
-                // Move bullet
-                bullet_x <= bullet_x + bullet_dx;
-                bullet_y <= bullet_y + bullet_dy;
+            if(!dead) begin
+                TankDir <= TankDir_Next; //still allow direction to change
+               
+                if (!brick_collision) begin //no collide with brick then we update position, else it stays the same
+                    TankX <= Tank_X_Next;
+                    TankY <= Tank_Y_Next;
+                end
                 
-                // Deactivate bullet if off-screen
-                if (bullet_x+8 < Tank_X_Min || bullet_x > Tank_X_Max+32 ||
-                    bullet_y+8 < Tank_Y_Min || bullet_y > Tank_Y_Max+32 ||bullet_hit_brick) begin
-                    bullet_active <= 0; //deactivate if hit brick
-                    //set bullet_active to 0
+                // Spawn bullet
+                if (fire && !bullet_active) begin
+                    bullet_active <= 1;
+        
+                    case (1'b1)
+                        TankDir[0]: begin // Up
+                            bullet_dx <= 0;
+                            bullet_dy <= -8;
+                            bullet_x <= TankX + 12;
+                            bullet_y <= TankY - 8;
+                            bullet_dir <= 4'b0001;
+                        end
+                        TankDir[1]: begin // Down
+                            bullet_dx <= 0;
+                            bullet_dy <= 8;
+                            bullet_x <= TankX + 12;
+                            bullet_y <= TankY + 32;
+                            bullet_dir <= 4'b0010;
+                        end
+                        TankDir[2]: begin // Left
+                            bullet_dx <= -8;
+                            bullet_dy <= 0;
+                            bullet_x <= TankX - 8;
+                            bullet_y <= TankY + 12;
+                            bullet_dir <= 4'b0100;
+                        end
+                        TankDir[3]: begin // Right
+                            bullet_dx <= 8;
+                            bullet_dy <= 0;
+                            bullet_x <= TankX + 32;
+                            bullet_y <= TankY + 12;
+                            bullet_dir <= 4'b1000;
+                        end
+                        default: begin
+                            bullet_dx <= 0;
+                            bullet_dy <= 0;
+                            bullet_x <= TankX + 12;
+                            bullet_y <= TankY + 12;
+                            bullet_dir <= 4'b0001;
+                        end
+                    endcase
+        
+                end else if (bullet_active) begin
+                    // Move bullet
+                    bullet_x <= bullet_x + bullet_dx;
+                    bullet_y <= bullet_y + bullet_dy;
+                    
+                    // Deactivate bullet if off-screen
+                    if (bullet_x+8 < Tank_X_Min || bullet_x > Tank_X_Max+32 ||
+                        bullet_y+8 < Tank_Y_Min || bullet_y > Tank_Y_Max+32 ||bullet_hit_brick) begin
+                        bullet_active <= 0; //deactivate if hit brick
+                        //set bullet_active to 0
+                    end
                 end
             end
-        end
+       end
     end
 
 
