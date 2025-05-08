@@ -58,7 +58,8 @@ module color_picker(
     //next variables for bullet adjacent 
     logic [4:0] row0,row1;
     logic [5:0] col0,col1;
-        
+    
+    // initialize brick map
     always_ff @(posedge vga_clk or posedge reset) begin
         if (reset) begin
             init_done <= 0;
@@ -71,7 +72,7 @@ module color_picker(
                 init_addr <= init_addr + 1;
             end  
         end else if (init_done && bullet_hit_brick) begin
-            // Mask and write row0 (top bricks)
+            // Mask and write row0 (top bricks) - set brick thats hit to 0
             brick_map[row0] <= brick_map[row0]
                 & ~(40'b1 << col0)
                 & ~(40'b1 << col1);
@@ -102,7 +103,6 @@ module color_picker(
     logic [3:0] bullet_dir;
     logic [9:0] bullet_x, bullet_y;
     
-    // will need to restructure this order since currently these can have multiple shows
     assign show_border = (DrawX < 80) || (DrawX > 559); // 5 columns on either side
     assign show_tank = (DrawX >= tankxsig) && (DrawX < tankxsig + 32) &&
 	                       (DrawY >= tankysig) && (DrawY < tankysig + 32);
@@ -115,11 +115,9 @@ module color_picker(
     assign brick_address = drawY>>4;
     //assign show_brick = brick_data[39 - brick_col];
     
-    //New implementation
+    // Brick coordinates - new logic (uses array)
     assign brick_data_array = brick_map[brick_address];
     assign show_brick = brick_data_array[39 - brick_col];
-    
-    // Brick coordinates - new logic (uses array)
     
     
     // Determine what color is important here
