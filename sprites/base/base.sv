@@ -26,7 +26,7 @@ always_comb begin
         //base_x = DrawX - 303;
         //base_y = 31 - (DrawY - 463);
         //base_y = DrawY - 463;
-        base_x = 31 - DrawX[4:0];
+        base_x = (DrawX + 16) & 5'b11111;;
         base_y = DrawY[4:0];
         rom_address = base_y * 32 + base_x;
     end else begin

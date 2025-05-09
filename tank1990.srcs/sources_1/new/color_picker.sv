@@ -63,7 +63,9 @@ module color_picker(
     logic [9:0] tankxsig, tankysig;
     logic [3:0] tankdir;
     logic [3:0] brick_red, brick_green, brick_blue, tank_red, tank_blue, tank_green;
-    logic [3:0] base_red, base_green, base_blue;
+    logic [3:0] base_red, base_green, base_blue, heart_red_1, heart_green_1, heart_blue_1,
+        heart_red_2, heart_green_2, heart_blue_2, heart_red_3, heart_green_3, heart_blue_3;
+    
     logic [5:0] brick_address;
     logic [39:0] brick_data;
     logic [39:0] brick_data_array;
@@ -234,7 +236,21 @@ module color_picker(
     
     
     // Determine what is on screen
-    logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;
+    logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible, 
+        show_heart_1, show_heart_2, show_heart_3;
+    
+        assign show_heart_1 = (DrawX > 585) && (DrawX < 597) && (DrawY > 31) && (DrawY < 44) && (player_lives > 0);
+    assign show_heart_2 = (DrawX > 602) && (DrawX < 614) && (DrawY > 31) && (DrawY < 44) && (player_lives > 1);
+    assign show_heart_3 = (DrawX > 585) && (DrawX < 597) && (DrawY > 47) && (DrawY < 60) && (player_lives > 2);
+    
+        // Assign heart drawing coordinates
+    logic [3:0] heart_1_x, heart_1_y, heart_2_x, heart_2_y, heart_3_x, heart_3_y;
+    assign heart_1_x = DrawX - 586;
+    assign heart_1_y = DrawY - 32;
+    assign heart_2_x = DrawX - 603;
+    assign heart_2_y = DrawY - 32;
+    assign heart_3_x = DrawX - 586;
+    assign heart_3_y = DrawY - 48;
     
     assign show_border = (DrawX < 80) || (DrawX > 559); // 5 columns on either side
     assign show_tank = (DrawX >= tankxsig) && (DrawX < tankxsig + 32) &&
@@ -265,7 +281,19 @@ module color_picker(
     
     // Determine what color is important here
     always_ff @(posedge vga_clk) begin
-        if (show_border) begin
+        if (show_heart_1) begin
+            red   <= heart_red_1;
+            green <= heart_green_1;
+            blue  <= heart_blue_1;
+        end else if (show_heart_2) begin
+            red   <= heart_red_2;
+            green <= heart_green_2;
+            blue  <= heart_blue_2;
+        end else if (show_heart_3) begin
+            red   <= heart_red_3;
+            green <= heart_green_3;
+            blue  <= heart_blue_3;
+        end else if (show_border) begin
             red <= 4'hB; // light gray - not sure
             green <= 4'hB;
             blue <= 4'hB;   
@@ -607,5 +635,33 @@ tank_explosion_multi #(.N(4)) explosion_renderer (
     .blue(explosion_blue)
 );
 
+   // Heart Generation
+    heart_example heart_instance_1(
+        .vga_clk(clk_25MHz),
+        .DrawX(heart_1_x),
+        .DrawY(heart_1_y),
+        .show_heart(show_heart_1),
+        .red(heart_red),
+        .blue(heart_blue),
+        .green(heart_green)
+    );
+    heart_example heart_instance_2(
+        .vga_clk(clk_25MHz),
+        .DrawX(heart_2_x),
+        .DrawY(heart_2_y),
+        .show_heart(show_heart_2),
+        .red(heart_red),
+        .blue(heart_blue),
+        .green(heart_green)
+    );
+    heart_example heart_instance_3(
+        .vga_clk(clk_25MHz),
+        .DrawX(heart_3_x),
+        .DrawY(heart_3_y),
+        .show_heart(show_heart_3),
+        .red(heart_red),
+        .blue(heart_blue),
+        .green(heart_green)
+    );
 
 endmodule

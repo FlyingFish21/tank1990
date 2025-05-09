@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -98,6 +99,7 @@ add_files C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_up/bullet_up.COE
 add_files C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_down/bullet_down.COE
 add_files C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_left/bullet_left.COE
 add_files C:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_right/bullet_right.COE
+add_files c:/Users/Leo/Documents/GitHub/tank1990/sprites/heart.COE
 read_verilog -library xil_defaultlib -sv {
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/design_source/VGA_controller.sv
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base.sv
@@ -118,6 +120,8 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_tank_left_palette.sv
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_tank_right_palette.sv
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_tank_up_palette.sv
+  C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/heart_example.sv
+  C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/heart_palette.sv
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/design_source/hex_driver.sv
   C:/Users/Leo/Documents/GitHub/tank1990/level_1_map.sv
   C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/player_controller.sv
@@ -212,6 +216,9 @@ set_property used_in_implementation false [get_files -all c:/Users/Leo/Documents
 
 read_ip -quiet C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/brick_rom_1/brick_rom.xci
 set_property used_in_implementation false [get_files -all c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/brick_rom_1/brick_rom_ooc.xdc]
+
+read_ip -quiet c:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

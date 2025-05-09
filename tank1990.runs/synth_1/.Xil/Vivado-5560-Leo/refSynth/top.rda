@@ -1,322 +1,0 @@
-Data_For_RDAFlowver5.0
-	top levelÈÒ
-mb_usb_hdmi_topˇ
-LinkDesign_Blackboxes>
-mb_block_i/rst_clk_wiz_1_100Mmb_block_rst_clk_wiz_1_100M_00
-mb_block_i/gpio_usb_rstmb_block_axi_gpio_0_0=
-,color_instance/enemy2_renderer/tank_down/romtank_down_rom=
-,color_instance/enemy2_renderer/bullet_up/rombullet_up_rom/
-mb_block_i/spi_usbmb_block_axi_quad_spi_0_00
-mb_block_i/gpio_usb_intmb_block_axi_gpio_0_12
-mb_block_i/timer_usb_aximb_block_axi_timer_0_0A
-.color_instance/enemy3_renderer/bullet_left/rombullet_left_romC
-/color_instance/enemy3_renderer/bullet_right/rombullet_right_rom,
-mb_block_i/clk_wiz_1mb_block_clk_wiz_1_0E
-4color_instance/tank_direction_instance/tank_left/romtank_left_rom4
-'color_instance/brick_instance/brick_rom	brick_romD
--mb_block_i/microblaze_0_local_memory/dlmb_v10mb_block_dlmb_v10_0<
-+color_instance/enemy_renderer/tank_left/romtank_left_romI
-6color_instance/tank_direction_instance/bullet_down/rombullet_down_romX
-7mb_block_i/microblaze_0_local_memory/ilmb_bram_if_cntlrmb_block_ilmb_bram_if_cntlr_0
-vga_to_hdmi	hdmi_tx_0=
-,color_instance/enemy3_renderer/tank_left/romtank_left_romB
-.color_instance/enemy_renderer/bullet_right/rombullet_right_romG
-5color_instance/tank_direction_instance/tank_right/romtank_right_rom2
-mb_block_i/microblaze_0mb_block_microblaze_0_0D
--mb_block_i/microblaze_0_local_memory/lmb_brammb_block_lmb_bram_0@
--color_instance/enemy_renderer/bullet_down/rombullet_down_rom=
-,color_instance/enemy2_renderer/tank_left/romtank_left_rom6
-mb_block_i/axi_uartlite_0mb_block_axi_uartlite_0_08
-)color_instance/enemy_renderer/tank_up/romtank_up_romK
-7color_instance/tank_direction_instance/bullet_right/rombullet_right_romA
-.color_instance/enemy2_renderer/bullet_down/rombullet_down_rom1
-%color_instance/base_instance/base_rombase_romA
-2color_instance/tank_direction_instance/tank_up/romtank_up_rom:
-'mb_block_i/microblaze_0_axi_periph/xbarmb_block_xbar_0X
-7mb_block_i/microblaze_0_local_memory/dlmb_bram_if_cntlrmb_block_dlmb_bram_if_cntlr_0$
-mb_block_i/mdm_1mb_block_mdm_1_0>
-,color_instance/enemy_renderer/tank_right/romtank_right_romI
-6color_instance/tank_direction_instance/bullet_left/rombullet_left_rom
-clk_wiz	clk_wiz_0?
--color_instance/enemy2_renderer/tank_right/romtank_right_romD
- mb_block_i/microblaze_0_axi_intc mb_block_microblaze_0_axi_intc_09
-*color_instance/enemy3_renderer/tank_up/romtank_up_romC
-/color_instance/enemy2_renderer/bullet_right/rombullet_right_rom4
-mb_block_i/gpio_usb_keycodemb_block_axi_gpio_0_2@
--color_instance/enemy_renderer/bullet_left/rombullet_left_romA
-.color_instance/enemy3_renderer/bullet_down/rombullet_down_rom9
-*color_instance/enemy2_renderer/tank_up/romtank_up_romE
-4color_instance/tank_direction_instance/tank_down/romtank_down_romE
-4color_instance/tank_direction_instance/bullet_up/rombullet_up_romA
-.color_instance/enemy2_renderer/bullet_left/rombullet_left_rom<
-+color_instance/enemy_renderer/tank_down/romtank_down_rom?
--color_instance/enemy3_renderer/tank_right/romtank_right_rom<
-+color_instance/enemy_renderer/bullet_up/rombullet_up_rom=
-,color_instance/enemy3_renderer/tank_down/romtank_down_rom=
-,color_instance/enemy3_renderer/bullet_up/rombullet_up_romD
--mb_block_i/microblaze_0_local_memory/ilmb_v10mb_block_ilmb_v10_0ôR
-synthFileNames]
-57WC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/player_controller.svS
-62MC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_left/tank_left_palette.sv<
-586C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank.svM
-63GC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_right/tank_right.svK
-59EC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_down/tank_down.svU
-64OC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_right/tank_right_palette.svF
-65@C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_top_level.svw
-70qC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/bullet_left_rom_stub.vG
-66AC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_up/tank_up.svw
-71qC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/bullet_down_rom_stub.vO
-67IC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_up/tank_up_palette.svu
-72oC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/bullet_up_rom_stub.vm
-68gC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/design_source/mb_usb_hdmi_top.sv
-73yC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_microblaze_0_0_stub.vx
-69rC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/bullet_right_rom_stub.v{
-74uC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_dlmb_v10_0_stub.v{
-75uC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_ilmb_v10_0_stub.vâ
-80ÇC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_microblaze_0_axi_intc_0_stub.vÖ
-76C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_dlmb_bram_if_cntlr_0_stub.vx
-81rC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_mdm_1_0_stub.vÖ
-77C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_ilmb_bram_if_cntlr_0_stub.v|
-82vC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_clk_wiz_1_0_stub.v{
-78uC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_lmb_bram_0_stub.vÖ
-83C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_rst_clk_wiz_1_100M_0_stub.vw
-79qC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_xbar_0_stub.vÅ
-84{C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_axi_quad_spi_0_0_stub.vÅ
-85{C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_axi_uartlite_0_0_stub.vq
-90kC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/hdmi_tx_0_stub.v~
-86xC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_axi_timer_0_0_stub.vq
-91kC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/clk_wiz_0_stub.v}
-87wC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_axi_gpio_0_0_stub.vu
-92oC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/tank_left_rom_stub.v}
-88wC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_axi_gpio_0_1_stub.vv
-93pC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/tank_right_rom_stub.v}
-89wC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/mb_block_axi_gpio_0_2_stub.vs
-94mC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/tank_up_rom_stub.vu
-95oC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/tank_down_rom_stub.vp
-96jC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/base_rom_stub.vq
-97kC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/.Xil/Vivado-5392-Leo/realtime/brick_rom_stub.v`
-98Zc:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/bd/mb_block/synth/mb_block.vx
-99rc:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/bd/mb_block/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v
-NumFileNames112û
-100ñc:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_xlconcat_0/synth/mb_block_microblaze_0_xlconcat_0.v8
-1011C:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_VCOMP.vhdY
-102RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/std_1164.vhdY
-103RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/standard.vhd\
-104UC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/numeric_std.vhdY
-110RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/syn_arit.vhdW
-105PC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/textio.vhdY
-111RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/syn_unsi.vhdY
-106RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/timing_p.vhdY
-107RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/timing_b.vhdY
-108RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/prmtvs_p.vhdY
-109RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/synth_1/1993/src/prmtvs_b.vhdJ
-10DC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/BRAM_SINGLE_MACRO.vhdG
-11AC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/BRAM_TDP_MACRO.vhdK
-12EC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/COUNTER_LOAD_MACRO.vhdI
-13CC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhdI
-14CC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/EQ_COMPARE_MACRO.vhdM
-15GC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/FIFO_DUALCLOCK_MACRO.vhdF
-20@C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/ADDSUB_MACRO.vH
-16BC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/FIFO_SYNC_MACRO.vhdH
-21BC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SDP_MACRO.vC
-17=C:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/MACC_MACRO.vhdK
-22EC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.vH
-23BC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_TDP_MACRO.vC
-18=C:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/MULT_MACRO.vhdL
-24FC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/COUNTER_LOAD_MACRO.vG
-19AC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/ADDMACC_MACRO.vD
-30>C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/MULT_MACRO.vJ
-25DC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/COUNTER_TC_MACRO.vJ
-31DC:/Xilinx/Vivado/2022.2/data/vhdl/src/unisims/retarget/MULT18X18.vhdJ
-26DC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/EQ_COMPARE_MACRO.vK
-32EC:/Xilinx/Vivado/2022.2/data/vhdl/src/unisims/retarget/MULT18X18S.vhdN
-27HC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/FIFO_DUALCLOCK_MACRO.v=
-18C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_VCOMP.vhd@
-33:C:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.svI
-28CC:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/FIFO_SYNC_MACRO.v<
-27C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_VPKG.vhdB
-34<C:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.svD
-29>C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/MACC_MACRO.v:
-35C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.vL
-40FC:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_palette.svF
-35@C:/Xilinx/Vivado/2022.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv=
-48C:/Xilinx/Vivado/2022.2/scripts/rt/data/internal_cells.v
-41yC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_down.svl
-36fC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/design_source/VGA_controller.sv3
-5.C:/Xilinx/Vivado/2022.2/scripts/rt/data/BUFT.vW
-42QC:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_down/bullet_down_palette.svA
-37;C:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base.svF
-6AC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/unimacro_VCOMP.vhd
-43yC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_left.svI
-38CC:/Users/Leo/Documents/GitHub/tank1990/sprites/base/base_palette.svE
-7@C:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/ADDMACC_MACRO.vhdW
-44QC:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_left/bullet_left_palette.svI
-39CC:/Users/Leo/Documents/GitHub/tank1990/sprites/bricks/brick_map1.svD
-8?C:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/ADDSUB_MACRO.vhdÄ
-45zC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_right.svF
-9AC:/Xilinx/Vivado/2022.2/data/vhdl/src/unimacro/BRAM_SDP_MACRO.vhd_
-50YC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_ai_controller.svY
-46SC:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_right/bullet_right_palette.svc
-51]C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_tank_down_palette.sv}
-47wC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/drive-download-20250428T170917Z-001/bullet_up.svc
-52]C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_tank_left_palette.svS
-48MC:/Users/Leo/Documents/GitHub/tank1990/sprites/bullet_up/bullet_up_palette.svd
-53^C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_tank_right_palette.svX
-49RC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/color_picker.sva
-54[C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/enemy_tank_up_palette.svh
-55bC:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/imports/design_source/hex_driver.svS
-60MC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_down/tank_down_palette.sv;
-565C:/Users/Leo/Documents/GitHub/tank1990/level_1_map.svK
-61EC:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_left/tank_left.sv
-
-synthStats£g
-ElaboratedNamesForRQSâg
-DSP_RAM≤	
-630807ß	 {color_instance/brick_map_reg[0]_i__7} {color_instance/brick_map_reg[10]_i__7} {color_instance/brick_map_reg[11]_i__7} {color_instance/brick_map_reg[12]_i__7} {color_instance/brick_map_reg[13]_i__7} {color_instance/brick_map_reg[14]_i__7} {color_instance/brick_map_reg[15]_i__7} {color_instance/brick_map_reg[16]_i__7} {color_instance/brick_map_reg[17]_i__7} {color_instance/brick_map_reg[18]_i__7} {color_instance/brick_map_reg[19]_i__7} {color_instance/brick_map_reg[1]_i__7} {color_instance/brick_map_reg[20]_i__7} {color_instance/brick_map_reg[21]_i__7} {color_instance/brick_map_reg[22]_i__7} {color_instance/brick_map_reg[23]_i__7} {color_instance/brick_map_reg[24]_i__7} {color_instance/brick_map_reg[25]_i__7} {color_instance/brick_map_reg[26]_i__7} {color_instance/brick_map_reg[27]_i__7} {color_instance/brick_map_reg[28]_i__7} {color_instance/brick_map_reg[29]_i__7} {color_instance/brick_map_reg[2]_i__7} {color_instance/brick_map_reg[3]_i__7} {color_instance/brick_map_reg[4]_i__7} {color_instance/brick_map_reg[5]_i__7} {color_instance/brick_map_reg[6]_i__7} {color_instance/brick_map_reg[7]_i__7} {color_instance/brick_map_reg[8]_i__7} {color_instance/brick_map_reg[9]_i__7} ∑
-405558¨ {color_instance/enemy2/brick_map2_i__0} {color_instance/enemy3/brick_map2_i__0} {color_instance/enemy_tank/brick_map2_i__0} {color_instance/tank_instance/brick_map2_i__0} 
-339990 {vga/hs3_i} û
-589878ì {color_instance/enemy2/col11_i} {color_instance/enemy2/col1_i} {color_instance/enemy3/col11_i} {color_instance/enemy3/col1_i} {color_instance/enemy_tank/col11_i} {color_instance/enemy_tank/col1_i} {color_instance/tank_instance/col11_i} {color_instance/tank_instance/col1_i} 1
-1011735& {color_instance/enemy2_show_tank3_i} ≥
-438326® {color_instance/enemy2/Tank_X_Next0_i} {color_instance/enemy3/Tank_X_Next0_i} {color_instance/enemy_tank/Tank_X_Next0_i} {color_instance/tank_instance/Tank_X_Next0_i} <
-1188432 {color_instance/base_instance/rom_address1_i__0} ß
-856118ú {color_instance/enemy2/bullet_x0_i} {color_instance/enemy3/bullet_x0_i} {color_instance/enemy_tank/bullet_x0_i} {color_instance/tank_instance/bullet_x0_i} 4
-1015831) {color_instance/enemy2_show_tank1_i__1} 
-274454 {vga/vc0_i} å
-172094Å {color_instance/enemy2_ai/move_counter3_i} {color_instance/enemy3_ai/move_counter3_i} {color_instance/enemy_ai/move_counter3_i} Ô
-245784‰ {color_instance/enemy2_renderer/bullet_rom_addr1_i__0} {color_instance/enemy3_renderer/bullet_rom_addr1_i__0} {color_instance/enemy_renderer/bullet_rom_addr1_i__0} {color_instance/tank_direction_instance/bullet_rom_addr1_i__0} )
-856087 {color_instance/enemy_col0_i} )
-983063 {color_instance/show_tank3_i} ø
-442422¥ {color_instance/enemy2/Tank_X_Next0_i__0} {color_instance/enemy3/Tank_X_Next0_i__0} {color_instance/enemy_tank/Tank_X_Next0_i__0} {color_instance/tank_instance/Tank_X_Next0_i__0} Ï	
-598039·	 {color_instance/brick_map_reg[0]_i__6} {color_instance/brick_map_reg[10]_i__6} {color_instance/brick_map_reg[11]_i__6} {color_instance/brick_map_reg[12]_i__6} {color_instance/brick_map_reg[13]_i__6} {color_instance/brick_map_reg[14]_i__6} {color_instance/brick_map_reg[15]_i__6} {color_instance/brick_map_reg[16]_i__6} {color_instance/brick_map_reg[17]_i__6} {color_instance/brick_map_reg[18]_i__6} {color_instance/brick_map_reg[19]_i__6} {color_instance/brick_map_reg[1]_i__6} {color_instance/brick_map_reg[20]_i__6} {color_instance/brick_map_reg[21]_i__6} {color_instance/brick_map_reg[22]_i__6} {color_instance/brick_map_reg[23]_i__6} {color_instance/brick_map_reg[24]_i__6} {color_instance/brick_map_reg[25]_i__6} {color_instance/brick_map_reg[26]_i__6} {color_instance/brick_map_reg[27]_i__6} {color_instance/brick_map_reg[28]_i__6} {color_instance/brick_map_reg[29]_i__6} {color_instance/brick_map_reg[2]_i__6} {color_instance/brick_map_reg[3]_i__6} {color_instance/brick_map_reg[4]_i__6} {color_instance/brick_map_reg[5]_i__6} {color_instance/brick_map_reg[6]_i__6} {color_instance/brick_map_reg[7]_i__6} {color_instance/brick_map_reg[8]_i__6} {color_instance/brick_map_reg[9]_i__6} {color_instance/init_addr_i} {color_instance/init_done_i} „
-249880ÿ {color_instance/enemy2_renderer/bullet_rom_addr2_i} {color_instance/enemy3_renderer/bullet_rom_addr2_i} {color_instance/enemy_renderer/bullet_rom_addr2_i} {color_instance/tank_direction_instance/bullet_rom_addr2_i} 
-249878 {vga/vc_i__0} ß
-860214ú {color_instance/enemy2/bullet_y0_i} {color_instance/enemy3/bullet_y0_i} {color_instance/enemy_tank/bullet_y0_i} {color_instance/tank_instance/bullet_y0_i} +
-901143! {color_instance/enemy2_row10_i} ,
-987159" {color_instance/show_tank1_i__1} ﬂ
-225304‘ {color_instance/enemy2_renderer/bullet_visible3_i} {color_instance/enemy3_renderer/bullet_visible3_i} {color_instance/enemy_renderer/bullet_visible3_i} {color_instance/tank_direction_instance/bullet_visible3_i} *
-933911  {color_instance/enemy3_col0_i} ≥
-888886® {color_instance/enemy2/bullet_y0_i__0} {color_instance/enemy3/bullet_y0_i__0} {color_instance/enemy_tank/bullet_y0_i__0} {color_instance/tank_instance/bullet_y0_i__0} ≥
-446518® {color_instance/enemy2/Tank_Y_Next0_i} {color_instance/enemy3/Tank_Y_Next0_i} {color_instance/enemy_tank/Tank_Y_Next0_i} {color_instance/tank_instance/Tank_Y_Next0_i} +
-1077271  {color_instance/show_brick0_i} º
-1019958∞ {color_instance/enemy2/bullet_active4_i} {color_instance/enemy3/bullet_active4_i} {color_instance/enemy_tank/bullet_active4_i} {color_instance/tank_instance/bullet_active4_i} )
-614423 {color_instance/init_addr0_i} Î
-229400‡ {color_instance/enemy2_renderer/bullet_visible1_i__1} {color_instance/enemy3_renderer/bullet_visible1_i__1} {color_instance/enemy_renderer/bullet_visible1_i__1} {color_instance/tank_direction_instance/bullet_visible1_i__1} å
-221246Å {color_instance/enemy2_ai/fire_counter0_i} {color_instance/enemy3_ai/fire_counter0_i} {color_instance/enemy_ai/fire_counter0_i} g
-127035] {color_instance/base_instance/rom_address0_i} {color_instance/base_instance/rom_address1_i} J
-905239@ {color_instance/enemy2_col11_i} {color_instance/enemy2_col1_i} /
-225281% {HexA/counter0_i} {HexB/counter0_i} 5
-28727, {color_instance/brick_map_instance/data_i} 1
-1024023& {color_instance/enemy3_show_tank3_i} å
-159806Å {color_instance/enemy2_ai/move_counter0_i} {color_instance/enemy3_ai/move_counter0_i} {color_instance/enemy_ai/move_counter0_i} +
-938007! {color_instance/enemy3_row10_i} *
-864279  {color_instance/enemy_row10_i} ∫
-253976Ø {color_instance/enemy2_renderer/bullet_rom_addr0_i} {color_instance/enemy2_renderer/bullet_rom_addr1_i} {color_instance/enemy3_renderer/bullet_rom_addr0_i} {color_instance/enemy3_renderer/bullet_rom_addr1_i} {color_instance/enemy_renderer/bullet_rom_addr0_i} {color_instance/enemy_renderer/bullet_rom_addr1_i} {color_instance/tank_direction_instance/bullet_rom_addr0_i} {color_instance/tank_direction_instance/bullet_rom_addr1_i} 
-286742 {vga/hc0_i} #
-811031 {color_instance/col0_i} *
-897047  {color_instance/enemy2_col0_i} ø
-450614¥ {color_instance/enemy2/Tank_Y_Next0_i__0} {color_instance/enemy3/Tank_Y_Next0_i__0} {color_instance/enemy_tank/Tank_Y_Next0_i__0} {color_instance/tank_instance/Tank_Y_Next0_i__0} H
-868375> {color_instance/enemy_col11_i} {color_instance/enemy_col1_i} 4
-1028119) {color_instance/enemy3_show_tank1_i__1} ö
-200728è {color_instance/enemy2_renderer/rom_address0_i} {color_instance/enemy2_renderer/rom_address1_i} {color_instance/enemy3_renderer/rom_address0_i} {color_instance/enemy3_renderer/rom_address1_i} {color_instance/enemy_renderer/rom_address0_i} {color_instance/enemy_renderer/rom_address1_i} {color_instance/tank_direction_instance/rom_address0_i} {color_instance/tank_direction_instance/rom_address1_i} ü
-380982î {color_instance/enemy2/TankX10_i} {color_instance/enemy3/TankX10_i} {color_instance/enemy_tank/TankX10_i} {color_instance/tank_instance/TankX10_i} ó
-577590å {color_instance/enemy2/row00_i} {color_instance/enemy3/row00_i} {color_instance/enemy_tank/row00_i} {color_instance/tank_instance/row00_i} J
-942103@ {color_instance/enemy3_col11_i} {color_instance/enemy3_col1_i} ì
-520246à {color_instance/enemy2/is_hit_by5_return3_i__0} {color_instance/enemy2/is_hit_by5_return4_i} {color_instance/enemy2/is_hit_by6_return4_i} {color_instance/enemy2/is_hit_by7_return4_i} {color_instance/enemy3/is_hit_by10_return4_i} {color_instance/enemy3/is_hit_by8_return3_i__0} {color_instance/enemy3/is_hit_by8_return4_i} {color_instance/enemy3/is_hit_by9_return4_i} {color_instance/enemy_tank/is_hit_by2_return3_i__0} {color_instance/enemy_tank/is_hit_by2_return4_i} {color_instance/enemy_tank/is_hit_by3_return4_i} {color_instance/enemy_tank/is_hit_by4_return4_i} {color_instance/tank_instance/is_hit_by0_return4_i} {color_instance/tank_instance/is_hit_by1_return4_i} {color_instance/tank_instance/is_hit_by_return3_i__0} {color_instance/tank_instance/is_hit_by_return4_i} /
-999447% {color_instance/enemy_show_tank3_i} Ñ
-65537{ {HexA/hex_i} {HexA/hex_i__0} {HexA/hex_i__1} {HexA/hex_i__2} {HexB/hex_i} {HexB/hex_i__0} {HexB/hex_i__1} {HexB/hex_i__2} ﬂ
-192536‘ {color_instance/enemy2_renderer/rom_address1_i__0} {color_instance/enemy3_renderer/rom_address1_i__0} {color_instance/enemy_renderer/rom_address1_i__0} {color_instance/tank_direction_instance/rom_address1_i__0} $
-819223 {color_instance/row10_i} +
-745495! {color_instance/enemy_lives0_i} ∑
-524342¨ {color_instance/enemy2/is_hit_by5_return1_i__1} {color_instance/enemy2/is_hit_by5_return2_i__1} {color_instance/enemy2/is_hit_by6_return2_i__1} {color_instance/enemy2/is_hit_by7_return2_i__1} {color_instance/enemy3/is_hit_by10_return2_i__1} {color_instance/enemy3/is_hit_by8_return1_i__1} {color_instance/enemy3/is_hit_by8_return2_i__1} {color_instance/enemy3/is_hit_by9_return2_i__1} {color_instance/enemy_tank/is_hit_by2_return1_i__1} {color_instance/enemy_tank/is_hit_by2_return2_i__1} {color_instance/enemy_tank/is_hit_by3_return2_i__1} {color_instance/enemy_tank/is_hit_by4_return2_i__1} {color_instance/tank_instance/is_hit_by0_return2_i__1} {color_instance/tank_instance/is_hit_by1_return2_i__1} {color_instance/tank_instance/is_hit_by_return1_i__1} {color_instance/tank_instance/is_hit_by_return2_i__1} i
-139320_ {color_instance/brick_instance/rom_address0_i} {color_instance/brick_instance/rom_address1_i} æ
-385078≥ {color_instance/enemy2/TankX10_i__0} {color_instance/enemy2/TankX12_i} {color_instance/enemy3/TankX10_i__0} {color_instance/enemy3/TankX12_i} {color_instance/enemy_tank/TankX10_i__0} {color_instance/enemy_tank/TankX12_i} {color_instance/tank_instance/TankX10_i__0} {color_instance/tank_instance/TankX12_i} ”
-196632» {color_instance/enemy2_renderer/rom_address2_i} {color_instance/enemy3_renderer/rom_address2_i} {color_instance/enemy_renderer/rom_address2_i} {color_instance/tank_direction_instance/rom_address2_i} 3
-1003543( {color_instance/enemy_show_tank1_i__1} ≥
-942134® {color_instance/enemy2/bullet_x0_i__1} {color_instance/enemy3/bullet_x0_i__1} {color_instance/enemy_tank/bullet_x0_i__1} {color_instance/tank_instance/bullet_x0_i__1} ≥
-913462® {color_instance/enemy2/bullet_x0_i__0} {color_instance/enemy3/bullet_x0_i__0} {color_instance/enemy_tank/bullet_x0_i__0} {color_instance/tank_instance/bullet_x0_i__0} ∆
-389174ª {color_instance/enemy2/TankX11_i__1} {color_instance/enemy2/TankX9_i__1} {color_instance/enemy3/TankX11_i__1} {color_instance/enemy3/TankX9_i__1} {color_instance/enemy_tank/TankX11_i__1} {color_instance/enemy_tank/TankX9_i__1} {color_instance/tank_instance/TankX11_i__1} {color_instance/tank_instance/TankX9_i__1} ,
-725015" {color_instance/player_lives0_i} û
-581686ì {color_instance/enemy2/col01_i} {color_instance/enemy2/col0_i} {color_instance/enemy3/col01_i} {color_instance/enemy3/col0_i} {color_instance/enemy_tank/col01_i} {color_instance/enemy_tank/col0_i} {color_instance/tank_instance/col01_i} {color_instance/tank_instance/col0_i} ¥
-1003574® {color_instance/enemy2/bullet_x0_i__2} {color_instance/enemy3/bullet_x0_i__2} {color_instance/enemy_tank/bullet_x0_i__2} {color_instance/tank_instance/bullet_x0_i__2} ´
-401462† {color_instance/enemy2/brick_map2_i} {color_instance/enemy3/brick_map2_i} {color_instance/enemy_tank/brick_map2_i} {color_instance/tank_instance/brick_map2_i} √
-778294∏ {color_instance/enemy2/disable_counter1_i} {color_instance/enemy3/disable_counter1_i} {color_instance/enemy_tank/disable_counter1_i} {color_instance/tank_instance/disable_counter1_i} ≥
-917558® {color_instance/enemy2/bullet_y0_i__1} {color_instance/enemy3/bullet_y0_i__1} {color_instance/enemy_tank/bullet_y0_i__1} {color_instance/tank_instance/bullet_y0_i__1} 
-393238 {vga/vs3_i} <
-8233192 {color_instance/col11_i} {color_instance/col1_i} ¢
-585782ó {color_instance/enemy2/row10_i} {color_instance/enemy2/row11_i} {color_instance/enemy3/row10_i} {color_instance/enemy3/row11_i} {color_instance/enemy_tank/row10_i} {color_instance/enemy_tank/row11_i} {color_instance/tank_instance/row10_i} {color_instance/tank_instance/row11_i} ˆ
-blackBoxInfo=
-,color_instance/enemy3_renderer/tank_down/romtank_down_rom=
-,color_instance/enemy3_renderer/bullet_up/rombullet_up_romD
--mb_block_i/microblaze_0_local_memory/ilmb_v10mb_block_ilmb_v10_0>
-mb_block_i/rst_clk_wiz_1_100Mmb_block_rst_clk_wiz_1_100M_00
-mb_block_i/gpio_usb_rstmb_block_axi_gpio_0_0=
-,color_instance/enemy2_renderer/tank_down/romtank_down_rom=
-,color_instance/enemy2_renderer/bullet_up/rombullet_up_rom/
-mb_block_i/spi_usbmb_block_axi_quad_spi_0_00
-mb_block_i/gpio_usb_intmb_block_axi_gpio_0_12
-mb_block_i/timer_usb_aximb_block_axi_timer_0_0A
-.color_instance/enemy3_renderer/bullet_left/rombullet_left_romC
-/color_instance/enemy3_renderer/bullet_right/rombullet_right_rom,
-mb_block_i/clk_wiz_1mb_block_clk_wiz_1_0E
-4color_instance/tank_direction_instance/tank_left/romtank_left_rom4
-'color_instance/brick_instance/brick_rom	brick_romD
--mb_block_i/microblaze_0_local_memory/dlmb_v10mb_block_dlmb_v10_0<
-+color_instance/enemy_renderer/tank_left/romtank_left_romI
-6color_instance/tank_direction_instance/bullet_down/rombullet_down_romX
-7mb_block_i/microblaze_0_local_memory/ilmb_bram_if_cntlrmb_block_ilmb_bram_if_cntlr_0
-vga_to_hdmi	hdmi_tx_0=
-,color_instance/enemy3_renderer/tank_left/romtank_left_romB
-.color_instance/enemy_renderer/bullet_right/rombullet_right_romG
-5color_instance/tank_direction_instance/tank_right/romtank_right_rom2
-mb_block_i/microblaze_0mb_block_microblaze_0_0D
--mb_block_i/microblaze_0_local_memory/lmb_brammb_block_lmb_bram_0@
--color_instance/enemy_renderer/bullet_down/rombullet_down_rom=
-,color_instance/enemy2_renderer/tank_left/romtank_left_rom6
-mb_block_i/axi_uartlite_0mb_block_axi_uartlite_0_08
-)color_instance/enemy_renderer/tank_up/romtank_up_romK
-7color_instance/tank_direction_instance/bullet_right/rombullet_right_romA
-.color_instance/enemy2_renderer/bullet_down/rombullet_down_rom1
-%color_instance/base_instance/base_rombase_romA
-2color_instance/tank_direction_instance/tank_up/romtank_up_rom:
-'mb_block_i/microblaze_0_axi_periph/xbarmb_block_xbar_0X
-7mb_block_i/microblaze_0_local_memory/dlmb_bram_if_cntlrmb_block_dlmb_bram_if_cntlr_0$
-mb_block_i/mdm_1mb_block_mdm_1_0>
-,color_instance/enemy_renderer/tank_right/romtank_right_romI
-6color_instance/tank_direction_instance/bullet_left/rombullet_left_rom
-clk_wiz	clk_wiz_0?
--color_instance/enemy2_renderer/tank_right/romtank_right_romD
- mb_block_i/microblaze_0_axi_intc mb_block_microblaze_0_axi_intc_09
-*color_instance/enemy3_renderer/tank_up/romtank_up_romC
-/color_instance/enemy2_renderer/bullet_right/rombullet_right_rom4
-mb_block_i/gpio_usb_keycodemb_block_axi_gpio_0_2@
--color_instance/enemy_renderer/bullet_left/rombullet_left_romA
-.color_instance/enemy3_renderer/bullet_down/rombullet_down_rom9
-*color_instance/enemy2_renderer/tank_up/romtank_up_romE
-4color_instance/tank_direction_instance/tank_down/romtank_down_romE
-4color_instance/tank_direction_instance/bullet_up/rombullet_up_romA
-.color_instance/enemy2_renderer/bullet_left/rombullet_left_rom<
-+color_instance/enemy_renderer/tank_down/romtank_down_rom?
--color_instance/enemy3_renderer/tank_right/romtank_right_rom<
-+color_instance/enemy_renderer/bullet_up/rombullet_up_romä
-synth_design
-isIncremental0
-Runtime2
-Threads used2^
-argsV-verilog_define default::[not_specified] -top  mb_usb_hdmi_top -part  xc7s50csga324-1 
-resynthPerc0.00
-Cputime2
-blackBoxPercinf
-	directive ù
-synth_design_metrics$
-mismatchedAddSubOperatorWidths-1
-lowMaxFanout-1
-NumUnregisteredPorts0
-caseNotFullNoDefault-1
-	smallSrls-1
-srlsWithResetLogic-1
-shallowRAMWithAttribute-1
-hierMFO0
-bigRAMs-1
-NetsWithMixedFanouts-1
-DSPsWithKeep0
-RQS_Results

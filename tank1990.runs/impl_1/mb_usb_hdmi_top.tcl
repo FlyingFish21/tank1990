@@ -154,6 +154,7 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/tank_down_rom_1/tank_down_rom.xci
   read_ip -quiet C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/base_rom/base_rom.xci
   read_ip -quiet C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/brick_rom_1/brick_rom.xci
+  read_ip -quiet c:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/constrs_1/imports/pin_assignment/mb_usb_hdmi_top.xdc
