@@ -21,11 +21,12 @@ module tank # (
     input logic move_right,
     input logic fire,
     output logic blocked,  // NEW
-    input logic [9:0] bullet_x_in,
-    input logic [9:0] bullet_y_in,
-    input logic       bullet_active_in,
     output logic       got_hit,    // goes high for one cycle on hit
-    input logic       dead        // top-level tells tank it's out of lives 
+    input logic       dead ,       // top-level tells tank it's out of lives 
+    input logic [9:0] bullet_x_in0, bullet_x_in1, bullet_x_in2,
+    input logic [9:0] bullet_y_in0, bullet_y_in1, bullet_y_in2,
+    input logic       bullet_active_in0, bullet_active_in1, bullet_active_in2
+
 );
     //start location(called center for now)
     parameter [9:0] Tank_X_Min = 80; // account for the gray border
@@ -108,12 +109,25 @@ module tank # (
 end
     //for detecting if this tank is hit by incoming bullet
     logic got_hit_internal;
-
+/*
     assign got_hit = bullet_active_in &&
                      bullet_x_in + 7 >= TankX &&
                      bullet_x_in <= TankX + 31 &&
                      bullet_y_in + 7 >= TankY &&
                      bullet_y_in <= TankY + 31;
+    */
+    function automatic logic is_hit_by(
+        input logic [9:0] bx, by,
+        input logic       active
+    );
+        return active &&
+               (bx + 7 >= TankX) && (bx <= TankX + 31) &&
+               (by + 7 >= TankY) && (by <= TankY + 31);
+    endfunction
+    
+    assign got_hit = is_hit_by(bullet_x_in0, bullet_y_in0, bullet_active_in0) ||
+                     is_hit_by(bullet_x_in1, bullet_y_in1, bullet_active_in1) ||
+                     is_hit_by(bullet_x_in2, bullet_y_in2, bullet_active_in2);
     
     //Detect if bullet hits brick
     logic [4:0] row0,row1;

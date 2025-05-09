@@ -30,6 +30,7 @@ module color_picker(
 	output logic [1:0] player_lives,       // 0 to 3
     output logic [3:0] enemy_lives     // 0 to 8
     );
+    
     //lives calculation
     logic player_dead, enemy_dead; // drive these into tank modules
     logic player_got_hit, enemy_got_hit; // from tank modules
@@ -43,7 +44,18 @@ module color_picker(
     assign enemy2_got_hit_pulse = enemy2_got_hit && !enemy2_got_hit_prev;
     assign enemy3_got_hit_pulse = enemy3_got_hit && !enemy3_got_hit_prev;
     
-   
+       //explosion calculation
+    logic [3:0] got_hit_pulses;
+    logic [9:0] tank_xs [3:0];
+    logic [9:0] tank_ys [3:0];
+    logic show_explosion;
+    logic [3:0] explosion_red, explosion_green, explosion_blue;
+    
+    assign got_hit_pulses = {enemy3_got_hit_pulse,enemy2_got_hit_pulse,enemy_got_hit_pulse,player_got_hit_pulse};
+    
+    assign tank_xs = {enemy3_tank_x, enemy2_tank_x, enemy_tank_x, tankxsig};
+    assign tank_ys = {enemy3_tank_y, enemy2_tank_y, enemy_tank_y, tankysig};
+    
     // Internal Logic
     logic clk_25MHz;
     logic reset_ah;
@@ -126,8 +138,8 @@ module color_picker(
         if (reset) begin
             init_done <= 0;
             init_addr <= 0;
-            player_lives <= 2'd4;
-            enemy_lives  <= 4'd16;
+            player_lives <= 2'd3;
+            enemy_lives  <= 4'd15;
             player_got_hit_prev <= 0;
             enemy_got_hit_prev  <= 0;
         end else if (!init_done) begin
@@ -256,7 +268,11 @@ module color_picker(
         if (show_border) begin
             red <= 4'hB; // light gray - not sure
             green <= 4'hB;
-            blue <= 4'hB;
+            blue <= 4'hB;   
+        end else if (show_explosion) begin
+            red   <= explosion_red;
+            green <= explosion_green;
+            blue  <= explosion_blue;
         end else if (show_base && !base_hit) begin
             red   <= base_red;
             green <= base_green;
@@ -348,11 +364,17 @@ module color_picker(
         .move_left(move_left),
         .move_right(move_right),
         .fire(fire),
-        .bullet_x_in(enemy_bullet_x),
-        .bullet_y_in(enemy_bullet_y),
-        .bullet_active_in(enemy_bullet_active),
         .got_hit(player_got_hit),
-        .dead(player_dead)
+        .dead(player_dead),
+        .bullet_x_in0(enemy_bullet_x),
+        .bullet_y_in0(enemy_bullet_y),
+        .bullet_active_in0(enemy_bullet_active),
+        .bullet_x_in1(enemy_bullet_x),
+        .bullet_y_in1(enemy_bullet_y),
+        .bullet_active_in1(enemy_bullet_active),
+        .bullet_x_in2(enemy3_bullet_x),
+        .bullet_y_in2(enemy3_bullet_y),
+        .bullet_active_in2(enemy3_bullet_active)
     );
     
     //Bullet
@@ -426,9 +448,9 @@ module color_picker(
         .move_right(enemy_move_right),
         .fire(enemy_fire),
         .blocked(enemy_ai_one_blocked),
-        .bullet_x_in(bullet_x),
-        .bullet_y_in(bullet_y),
-        .bullet_active_in(bullet_active),
+        .bullet_x_in0(bullet_x),
+        .bullet_y_in0(bullet_y),
+        .bullet_active_in0(bullet_active),
         .got_hit(enemy_got_hit),
         .dead(enemy_dead)
     );
@@ -454,9 +476,9 @@ module color_picker(
         .move_right(enemy2_move_right),
         .fire(enemy2_fire),
         .blocked(enemy2_ai_blocked),
-        .bullet_x_in(bullet_x),
-        .bullet_y_in(bullet_y),
-        .bullet_active_in(bullet_active),
+        .bullet_x_in0(bullet_x),
+        .bullet_y_in0(bullet_y),
+        .bullet_active_in0(bullet_active),
         .got_hit(enemy2_got_hit),
         .dead(enemy_dead)
     );
@@ -483,9 +505,9 @@ module color_picker(
         .move_right(enemy3_move_right),
         .fire(enemy3_fire),
         .blocked(enemy3_ai_blocked),
-        .bullet_x_in(bullet_x),
-        .bullet_y_in(bullet_y),
-        .bullet_active_in(bullet_active),
+        .bullet_x_in0(bullet_x),
+        .bullet_y_in0(bullet_y),
+        .bullet_active_in0(bullet_active),
         .got_hit(enemy3_got_hit),
         .dead(enemy_dead)
     );
@@ -570,5 +592,20 @@ enemy_ai_controller enemy3_ai (
     .fire(enemy3_fire),
     .blocked(enemy3_ai_blocked)
 );
+/*
+tank_explosion_multi #(.N(4)) explosion_renderer (
+    .clk(vga_clk),
+    .reset(reset),
+    .got_hit_pulse(got_hit_pulses),
+    .tank_x(tank_xs),
+    .tank_y(tank_ys),
+    .draw_x(DrawX),
+    .draw_y(DrawY),
+    .show_explosion(show_explosion),
+    .red(explosion_red),
+    .green(explosion_green),
+    .blue(explosion_blue)
+);
 
+*/
 endmodule
