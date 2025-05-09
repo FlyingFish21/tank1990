@@ -62,7 +62,7 @@ module mb_usb_hdmi_top(
         .reset(reset_ah),
         .in({
             4'b0000,                // unused or reserved
-            {player_lives, 2'b00},    // player lives as 4 bits
+            {2'b00, player_lives},    // player lives as 4 bits
             enemy_lives,            // 4 bits
             keycode0_gpio[19:16]    // last digit
         }),

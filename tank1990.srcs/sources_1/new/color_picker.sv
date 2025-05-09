@@ -47,6 +47,7 @@ module color_picker(
     logic [5:0] brick_address;
     logic [39:0] brick_data;
     logic [39:0] brick_data_array;
+    logic base_hit;
     
     // Enemy tank signals
     logic [9:0] enemy_tank_x, enemy_tank_y;
@@ -179,15 +180,15 @@ module color_picker(
             red <= 4'hB; // light gray - not sure
             green <= 4'hB;
             blue <= 4'hB;
-        end else if (show_base) begin
+        end else if (show_base && !base_hit) begin
             red   <= base_red;
             green <= base_green;
             blue  <= base_blue;
-        end else if (show_tank || (bullet_active && bullet_visible)) begin
+        end else if ((show_tank || (bullet_active && bullet_visible)) && !player_dead) begin
             red   <= tank_red;
             green <= tank_green;
             blue  <= tank_blue;
-        end else if (enemy_show_tank || (enemy_bullet_active && enemy_bullet_visible)) begin //we remove bullet if collision
+        end else if ((enemy_show_tank || (enemy_bullet_active && enemy_bullet_visible)) && !enemy_dead) begin //we remove bullet if collision
             red   <= enemy_tank_red;
             green <= enemy_tank_green;
             blue  <= enemy_tank_blue;
@@ -201,6 +202,17 @@ module color_picker(
             blue  <= 4'h0;
         end
     end
+    
+    //base hit
+    assign base_hit = 
+    (enemy_bullet_active &&
+     enemy_bullet_x + 7 >= 304 && enemy_bullet_x <= 335 &&
+     enemy_bullet_y + 7 >= 448 && enemy_bullet_y <= 479)
+ ||
+    (bullet_active &&
+     bullet_x + 7 >= 304 && bullet_x <= 335 &&
+     bullet_y + 7 >= 448 && bullet_y <= 479);
+
     
     //Tank Top Level, renderer for my tank
     tank_top_level tank_direction_instance( 
