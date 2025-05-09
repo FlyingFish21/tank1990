@@ -1,0 +1,6 @@
+color_picker__GB0
+color_picker__GB1
+color_picker__GB2
+color_picker__GB3
+color_picker__GB4
+mb_usb_hdmi_top__GC0

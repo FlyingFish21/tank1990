@@ -40,6 +40,9 @@ module tank # (
     logic [3:0] TankDir_Next;
     logic signed [9:0] bullet_dx, bullet_dy;
     logic shoot, shoot_next;
+    logic [7:0] disable_counter;
+    logic disabled;  // HIGH = can't move/fire/be hit
+
     //logic [9:0] bullet_x, bullet_y;
     
     //check brick collision
@@ -125,9 +128,9 @@ end
                (by + 7 >= TankY) && (by <= TankY + 31);
     endfunction
     
-    assign got_hit = is_hit_by(bullet_x_in0, bullet_y_in0, bullet_active_in0) ||
+    assign got_hit = !disabled && (is_hit_by(bullet_x_in0, bullet_y_in0, bullet_active_in0) ||
                      is_hit_by(bullet_x_in1, bullet_y_in1, bullet_active_in1) ||
-                     is_hit_by(bullet_x_in2, bullet_y_in2, bullet_active_in2);
+                     is_hit_by(bullet_x_in2, bullet_y_in2, bullet_active_in2));
     
     //Detect if bullet hits brick
     logic [4:0] row0,row1;
@@ -178,13 +181,16 @@ end
             bullet_x <= 0;
             bullet_y <= 0;
             bullet_dir <= 4'b0001;
-            //got_hit <= 0;
-            //got_hit_prev <= 0;
-        end else begin
-            //got_hit <= got_hit_internal && !got_hit_prev;
-            //got_hit_prev <= got_hit_internal;  //edge detection
             
-            if(!dead) begin
+            // Start invulnerability period
+            disable_counter <= 8'd60;  // ~1 second if vsync = 60Hz
+            disabled <= 1;
+        end else begin
+                if (disable_counter != 0)
+                    disable_counter <= disable_counter - 1;
+            
+                disabled <= (disable_counter != 0);
+            if(!dead && !disabled ) begin
                 TankDir <= TankDir_Next; //still allow direction to change
                
                 if (!brick_collision) begin //no collide with brick then we update position, else it stays the same

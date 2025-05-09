@@ -51,7 +51,7 @@ module color_picker(
     logic show_explosion;
     logic [3:0] explosion_red, explosion_green, explosion_blue;
     
-    assign got_hit_pulses = {enemy3_got_hit_pulse,enemy2_got_hit_pulse,enemy_got_hit_pulse,player_got_hit_pulse};
+    assign got_hit_pulses = {enemy3_got_hit,enemy2_got_hit,enemy_got_hit,player_got_hit};
     
     assign tank_xs = {enemy3_tank_x, enemy2_tank_x, enemy_tank_x, tankxsig};
     assign tank_ys = {enemy3_tank_y, enemy2_tank_y, enemy_tank_y, tankysig};
@@ -369,9 +369,9 @@ module color_picker(
         .bullet_x_in0(enemy_bullet_x),
         .bullet_y_in0(enemy_bullet_y),
         .bullet_active_in0(enemy_bullet_active),
-        .bullet_x_in1(enemy_bullet_x),
-        .bullet_y_in1(enemy_bullet_y),
-        .bullet_active_in1(enemy_bullet_active),
+        .bullet_x_in1(enemy2_bullet_x),
+        .bullet_y_in1(enemy2_bullet_y),
+        .bullet_active_in1(enemy2_bullet_active),
         .bullet_x_in2(enemy3_bullet_x),
         .bullet_y_in2(enemy3_bullet_y),
         .bullet_active_in2(enemy3_bullet_active)
@@ -592,7 +592,7 @@ enemy_ai_controller enemy3_ai (
     .fire(enemy3_fire),
     .blocked(enemy3_ai_blocked)
 );
-/*
+
 tank_explosion_multi #(.N(4)) explosion_renderer (
     .clk(vga_clk),
     .reset(reset),
@@ -607,5 +607,5 @@ tank_explosion_multi #(.N(4)) explosion_renderer (
     .blue(explosion_blue)
 );
 
-*/
+
 endmodule

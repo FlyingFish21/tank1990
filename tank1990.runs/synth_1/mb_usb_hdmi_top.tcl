@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -125,6 +124,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank.sv
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_down/tank_down.sv
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_down/tank_down_palette.sv
+  C:/Users/Leo/Documents/GitHub/tank1990/tank1990.srcs/sources_1/new/tank_explosion_multi.sv
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_left/tank_left.sv
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_left/tank_left_palette.sv
   C:/Users/Leo/Documents/GitHub/tank1990/sprites/tank_right/tank_right.sv
