@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
 -- Date        : Sun May  4 18:36:26 2025
 -- Host        : Leo running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/Leo/Documents/GitHub/tank1990/tank1990.gen/sources_1/ip/tank_left_rom_2/tank_left_rom_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top tank_left_rom -prefix
+--               tank_left_rom_ tank_left_rom_stub.vhdl
 -- Design      : tank_left_rom
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1

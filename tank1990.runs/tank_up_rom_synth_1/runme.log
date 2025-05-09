@@ -10,17 +10,16 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source tank_up_rom.tcl -notrace
-create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 373.340 ; gain = 46.195
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 372.426 ; gain = 44.945
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/Leo/Documents/GitHub/ECE385_provided/RD_hdmi_ip2020'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/flyin/Desktop/ECE_385/ECE385_provided/RD_hdmi_ip2020'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: tank_up_rom
-INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 94a4db3febdb5100 to dir: C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom.dcp to C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.dcp.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_sim_netlist.v to C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.v.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_sim_netlist.vhdl to C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.vhdl.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_stub.v to C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.v.
-INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Leo/Documents/GitHub/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_stub.vhdl to C:/Users/Leo/Documents/GitHub/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.vhdl.
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 94a4db3febdb5100 to dir: C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom.dcp to C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_sim_netlist.v to C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_sim_netlist.vhdl to C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_stub.v to C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.cache/ip/2022.2/9/4/94a4db3febdb5100/tank_up_rom_stub.vhdl to C:/Users/flyin/Desktop/ECE_385/tank1990/tank1990.runs/tank_up_rom_synth_1/tank_up_rom_stub.vhdl.
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP tank_up_rom, cache-ID = 94a4db3febdb5100.
-INFO: [Common 17-206] Exiting Vivado at Sun May  4 16:39:34 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu May  8 23:29:35 2025...

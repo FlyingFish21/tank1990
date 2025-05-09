@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="tank_left_rom_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1746401721">
+<GenRun Id="tank_left_rom_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1746764954">
   <File Type="PA-TCL" Name="tank_left_rom.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="tank_left_rom_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="tank_left_rom_reports.tcl"/>
   <File Type="RDS-RDS" Name="tank_left_rom.vds"/>
   <File Type="RDS-UTIL" Name="tank_left_rom_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="tank_left_rom_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="tank_left_rom.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="tank_left_rom_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="tank_left_rom_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tank_left_rom">
     <File Path="$PSRCDIR/sources_1/ip/tank_left_rom_2/tank_left_rom.xci">
       <FileInfo>

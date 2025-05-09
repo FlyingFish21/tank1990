@@ -27,7 +27,7 @@ module color_picker(
     input  logic [7:0] keycode0,
 	input  logic [9:0] DrawX, DrawY,
 	output logic [3:0] red, green, blue,
-	output logic [1:0] player_lives,       // 0 to 3
+	output logic [1:0] player_lives,       // 0 to 4
     output logic [3:0] enemy_lives     // 0 to 8
     );
     //lives calculation
@@ -43,7 +43,8 @@ module color_picker(
     logic [9:0] tankxsig, tankysig;
     logic [3:0] tankdir;
     logic [3:0] brick_red, brick_green, brick_blue, tank_red, tank_blue, tank_green;
-    logic [3:0] base_red, base_green, base_blue;
+    logic [3:0] base_red, base_green, base_blue, heart_red_1, heart_green_1, heart_blue_1,
+        heart_red_2, heart_green_2, heart_blue_2, heart_red_3, heart_green_3, heart_blue_3;
     logic [5:0] brick_address;
     logic [39:0] brick_data;
     logic [39:0] brick_data_array;
@@ -137,7 +138,6 @@ module color_picker(
     assign row1 = (bullet_y + 7) >> 4;
     assign col1 = 39 - ((bullet_x + 7) >> 4);
 
-    
     assign bullet_hit_brick = brick_map[row0][col0] || brick_map[row0][col1] || brick_map[row1][col0] || brick_map[row1][col1];
 
     // Enemy bullet hit logic
@@ -152,9 +152,26 @@ module color_picker(
          brick_map[enemy_row1][enemy_col0] || brick_map[enemy_row1][enemy_col1]);
     
     // Determine what is on screen
-    logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;
+    logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible, 
+        show_heart_1, show_heart_2, show_heart_3;
     
+    assign show_heart_1 = (DrawX > 585) && (DrawX < 597) && (DrawY > 31) && (DrawY < 44) && (player_lives > 0);
+    assign show_heart_2 = (DrawX > 602) && (DrawX < 614) && (DrawY > 31) && (DrawY < 44) && (player_lives > 1);
+    assign show_heart_3 = (DrawX > 585) && (DrawX < 597) && (DrawY > 47) && (DrawY < 60) && (player_lives > 2);
+    //assign show_heart_4 = (DrawX > 602) && (DrawX < 614) && (DrawY > 47) && (DrawY < 60) && (player_lives == 4); 
     assign show_border = (DrawX < 80) || (DrawX > 559); // 5 columns on either side
+    
+    // Assign heart drawing coordinates
+    logic [3:0] heart_1_x, heart_1_y, heart_2_x, heart_2_y, heart_3_x, heart_3_y;
+    assign heart_1_x = DrawX - 586;
+    assign heart_1_y = DrawY - 32;
+    assign heart_2_x = DrawX - 603;
+    assign heart_2_y = DrawY - 32;
+    assign heart_3_x = DrawX - 586;
+    assign heart_3_y = DrawY - 48;
+    //assign heart_4_x = DrawX - 603;
+    //assign heart_4_y = DrawY - 48;
+    
     assign show_tank = (DrawX >= tankxsig) && (DrawX < tankxsig + 32) &&
 	                       (DrawY >= tankysig) && (DrawY < tankysig + 32);
 	assign show_base = (DrawX > 303) && (DrawX < 336) && (DrawY < 480) && (DrawY > 447); // bottom center
@@ -173,10 +190,21 @@ module color_picker(
     assign brick_data_array = brick_map[brick_address];
     assign show_brick = brick_data_array[39 - brick_col];
     
-    
     // Determine what color is important here
     always_ff @(posedge vga_clk) begin
-        if (show_border) begin
+            if (show_heart_1) begin
+            red   <= heart_red_1;
+            green <= heart_green_1;
+            blue  <= heart_blue_1;
+        end else if (show_heart_2) begin
+            red   <= heart_red_2;
+            green <= heart_green_2;
+            blue  <= heart_blue_2;
+        end else if (show_heart_3) begin
+            red   <= heart_red_3;
+            green <= heart_green_3;
+            blue  <= heart_blue_3;
+        end else if (show_border) begin
             red <= 4'hB; // light gray - not sure
             green <= 4'hB;
             blue <= 4'hB;
@@ -290,8 +318,6 @@ module color_picker(
         .blue(brick_blue),
         .green(brick_green)
     );
-    
-
 
     // Base Generation
     base base_instance(
@@ -302,6 +328,35 @@ module color_picker(
         .red(base_red),
         .blue(base_blue),
         .green(base_green)
+    );
+    
+    // Heart Generation
+    heart_example heart_instance_1(
+        .vga_clk(clk_25MHz),
+        .DrawX(heart_1_x),
+        .DrawY(heart_1_y),
+        .show_heart(show_heart_1),
+        .red(heart_red),
+        .blue(heart_blue),
+        .green(heart_green)
+    );
+    heart_example heart_instance_2(
+        .vga_clk(clk_25MHz),
+        .DrawX(heart_2_x),
+        .DrawY(heart_2_y),
+        .show_heart(show_heart_2),
+        .red(heart_red),
+        .blue(heart_blue),
+        .green(heart_green)
+    );
+    heart_example heart_instance_3(
+        .vga_clk(clk_25MHz),
+        .DrawX(heart_3_x),
+        .DrawY(heart_3_y),
+        .show_heart(show_heart_3),
+        .red(heart_red),
+        .blue(heart_blue),
+        .green(heart_green)
     );
     
     logic enemy_ai_one_blocked;
