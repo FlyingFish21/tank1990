@@ -35,6 +35,14 @@ module color_picker(
     logic player_got_hit, enemy_got_hit; // from tank modules
     logic player_got_hit_prev, enemy_got_hit_prev;
     wire  player_got_hit_pulse, enemy_got_hit_pulse;
+    
+    logic enemy2_got_hit, enemy3_got_hit;
+    logic enemy2_got_hit_prev, enemy3_got_hit_prev;
+    wire enemy2_got_hit_pulse, enemy3_got_hit_pulse;
+    
+    assign enemy2_got_hit_pulse = enemy2_got_hit && !enemy2_got_hit_prev;
+    assign enemy3_got_hit_pulse = enemy3_got_hit && !enemy3_got_hit_prev;
+    
    
     // Internal Logic
     logic clk_25MHz;
@@ -62,6 +70,37 @@ module color_picker(
     logic [5:0] enemy_col0, enemy_col1;
     logic enemy_bullet_hit_brick;
     
+    // === Enemy 2 ===
+    logic [9:0] enemy2_tank_x, enemy2_tank_y;
+    logic [3:0] enemy2_tank_dir;
+    logic [9:0] enemy2_bullet_x, enemy2_bullet_y;
+    logic [3:0] enemy2_bullet_dir;
+    logic enemy2_bullet_active, enemy2_bullet_visible;
+    logic [3:0] enemy2_tank_red, enemy2_tank_green, enemy2_tank_blue;
+    logic enemy2_show_tank;
+    logic enemy2_got_hit;
+    logic [4:0] enemy2_row0, enemy2_row1;
+    logic [5:0] enemy2_col0, enemy2_col1;
+    logic enemy2_bullet_hit_brick;
+    logic enemy2_move_up, enemy2_move_down, enemy2_move_left, enemy2_move_right, enemy2_fire;
+    logic enemy2_ai_blocked;
+    
+    // === Enemy 3 ===
+    logic [9:0] enemy3_tank_x, enemy3_tank_y;
+    logic [3:0] enemy3_tank_dir;
+    logic [9:0] enemy3_bullet_x, enemy3_bullet_y;
+    logic [3:0] enemy3_bullet_dir;
+    logic enemy3_bullet_active, enemy3_bullet_visible;
+    logic [3:0] enemy3_tank_red, enemy3_tank_green, enemy3_tank_blue;
+    logic enemy3_show_tank;
+    logic enemy3_got_hit;
+    logic [4:0] enemy3_row0, enemy3_row1;
+    logic [5:0] enemy3_col0, enemy3_col1;
+    logic enemy3_bullet_hit_brick;
+    logic enemy3_move_up, enemy3_move_down, enemy3_move_left, enemy3_move_right, enemy3_fire;
+    logic enemy3_ai_blocked;
+    
+    
     // Control signals from AI
     logic enemy_move_up, enemy_move_down, enemy_move_left, enemy_move_right, enemy_fire;
     
@@ -87,8 +126,8 @@ module color_picker(
         if (reset) begin
             init_done <= 0;
             init_addr <= 0;
-            player_lives <= 2'd3;
-            enemy_lives  <= 4'd8;
+            player_lives <= 2'd4;
+            enemy_lives  <= 4'd16;
             player_got_hit_prev <= 0;
             enemy_got_hit_prev  <= 0;
         end else if (!init_done) begin
@@ -98,7 +137,7 @@ module color_picker(
             end else begin
                 init_addr <= init_addr + 1;
             end  
-        end else if (init_done && (bullet_hit_brick || enemy_bullet_hit_brick)) begin
+        end else if (init_done && (bullet_hit_brick || enemy_bullet_hit_brick || enemy2_bullet_hit_brick || enemy3_bullet_hit_brick)) begin
             if (bullet_hit_brick) begin
                 brick_map[row0] <= brick_map[row0] & ~(40'b1 << col0) & ~(40'b1 << col1);
                 brick_map[row1] <= brick_map[row1] & ~(40'b1 << col0) & ~(40'b1 << col1);
@@ -107,15 +146,27 @@ module color_picker(
                 brick_map[enemy_row0] <= brick_map[enemy_row0] & ~(40'b1 << enemy_col0) & ~(40'b1 << enemy_col1);
                 brick_map[enemy_row1] <= brick_map[enemy_row1] & ~(40'b1 << enemy_col0) & ~(40'b1 << enemy_col1);
             end
+            if (enemy2_bullet_hit_brick) begin
+                brick_map[enemy2_row0] <= brick_map[enemy2_row0] & ~(40'b1 << enemy2_col0) & ~(40'b1 << enemy2_col1);
+                brick_map[enemy2_row1] <= brick_map[enemy2_row1] & ~(40'b1 << enemy2_col0) & ~(40'b1 << enemy2_col1);
+            end
+            if (enemy3_bullet_hit_brick) begin
+                brick_map[enemy3_row0] <= brick_map[enemy3_row0] & ~(40'b1 << enemy3_col0) & ~(40'b1 << enemy3_col1);
+                brick_map[enemy3_row1] <= brick_map[enemy3_row1] & ~(40'b1 << enemy3_col0) & ~(40'b1 << enemy3_col1);
+            end
+                
         end else begin
             player_got_hit_prev <= player_got_hit;
             enemy_got_hit_prev  <= enemy_got_hit;
+            enemy2_got_hit_prev <= enemy2_got_hit;
+            enemy3_got_hit_prev <= enemy3_got_hit;
+            
             if (player_got_hit_pulse  && player_lives > 0)
                 player_lives <= player_lives - 1;
             else
                 player_lives <= player_lives; // hold value
             
-            if (enemy_got_hit_pulse && enemy_lives > 0)
+            if ((enemy_got_hit_pulse || enemy2_got_hit_pulse || enemy3_got_hit_pulse) && enemy_lives > 0)
                 enemy_lives <= enemy_lives - 1;
             else
                 enemy_lives <= enemy_lives; // hold value
@@ -150,6 +201,25 @@ module color_picker(
     
     assign enemy_bullet_hit_brick = (brick_map[enemy_row0][enemy_col0] || brick_map[enemy_row0][enemy_col1] ||
          brick_map[enemy_row1][enemy_col0] || brick_map[enemy_row1][enemy_col1]);
+         
+    // Enemy 2
+    assign enemy2_row0 = enemy2_bullet_y >> 4;
+    assign enemy2_col0 = 39 - (enemy2_bullet_x >> 4);
+    assign enemy2_row1 = (enemy2_bullet_y + 7) >> 4;
+    assign enemy2_col1 = 39 - ((enemy2_bullet_x + 7) >> 4);
+    assign enemy2_bullet_hit_brick =
+        brick_map[enemy2_row0][enemy2_col0] || brick_map[enemy2_row0][enemy2_col1] ||
+        brick_map[enemy2_row1][enemy2_col0] || brick_map[enemy2_row1][enemy2_col1];
+    
+    // Enemy 3
+    assign enemy3_row0 = enemy3_bullet_y >> 4;
+    assign enemy3_col0 = 39 - (enemy3_bullet_x >> 4);
+    assign enemy3_row1 = (enemy3_bullet_y + 7) >> 4;
+    assign enemy3_col1 = 39 - ((enemy3_bullet_x + 7) >> 4);
+    assign enemy3_bullet_hit_brick =
+        brick_map[enemy3_row0][enemy3_col0] || brick_map[enemy3_row0][enemy3_col1] ||
+        brick_map[enemy3_row1][enemy3_col0] || brick_map[enemy3_row1][enemy3_col1];
+    
     
     // Determine what is on screen
     logic [0:0] show_brick, show_tank, show_base, show_border, bullet_visible;
@@ -161,7 +231,14 @@ module color_picker(
     
     assign enemy_show_tank = (DrawX >= enemy_tank_x) && (DrawX < enemy_tank_x + 32) &&
                          (DrawY >= enemy_tank_y) && (DrawY < enemy_tank_y + 32);
+                         
+    assign enemy2_show_tank = (DrawX >= enemy2_tank_x) && (DrawX < enemy2_tank_x + 32) &&
+                          (DrawY >= enemy2_tank_y) && (DrawY < enemy2_tank_y + 32);
+
+    assign enemy3_show_tank = (DrawX >= enemy3_tank_x) && (DrawX < enemy3_tank_x + 32) &&
+                              (DrawY >= enemy3_tank_y) && (DrawY < enemy3_tank_y + 32);
     
+        
     // Brick coordinates - old logic (uses map rom)
     logic [5:0] brick_row, brick_col;
     assign brick_row = DrawY[9:4];
@@ -192,6 +269,14 @@ module color_picker(
             red   <= enemy_tank_red;
             green <= enemy_tank_green;
             blue  <= enemy_tank_blue;
+            end else if ((enemy2_show_tank || (enemy2_bullet_active && enemy2_bullet_visible)) && !enemy_dead) begin
+            red   <= enemy2_tank_red;
+            green <= enemy2_tank_green;
+            blue  <= enemy2_tank_blue;
+        end else if ((enemy3_show_tank || (enemy3_bullet_active && enemy3_bullet_visible)) && !enemy_dead) begin
+            red   <= enemy3_tank_red;
+            green <= enemy3_tank_green;
+            blue  <= enemy3_tank_blue;
         end else if (show_brick) begin
             red   <= brick_red;
             green <= brick_green;
@@ -348,6 +433,64 @@ module color_picker(
         .dead(enemy_dead)
     );
     
+    tank #(
+        .Tank_X_Center(100),  // Left side
+        .Tank_Y_Center(0),
+        .Tank_Dir_Spawn(4'b0010)
+    ) enemy2 (
+        .Reset(reset),
+        .frame_clk(vsync),
+        .TankX(enemy2_tank_x),
+        .TankY(enemy2_tank_y),
+        .TankDir(enemy2_tank_dir),
+        .bullet_dir(enemy2_bullet_dir),
+        .bullet_x(enemy2_bullet_x),
+        .bullet_y(enemy2_bullet_y),
+        .bullet_active(enemy2_bullet_active),
+        .brick_map(brick_map),
+        .move_up(enemy2_move_up),
+        .move_down(enemy2_move_down),
+        .move_left(enemy2_move_left),
+        .move_right(enemy2_move_right),
+        .fire(enemy2_fire),
+        .blocked(enemy2_ai_blocked),
+        .bullet_x_in(bullet_x),
+        .bullet_y_in(bullet_y),
+        .bullet_active_in(bullet_active),
+        .got_hit(enemy2_got_hit),
+        .dead(enemy_dead)
+    );
+
+    
+        tank #(
+        .Tank_X_Center(500),  // Right side
+        .Tank_Y_Center(0),
+        .Tank_Dir_Spawn(4'b0010)
+    ) enemy3 (
+        .Reset(reset),
+        .frame_clk(vsync),
+        .TankX(enemy3_tank_x),
+        .TankY(enemy3_tank_y),
+        .TankDir(enemy3_tank_dir),
+        .bullet_dir(enemy3_bullet_dir),
+        .bullet_x(enemy3_bullet_x),
+        .bullet_y(enemy3_bullet_y),
+        .bullet_active(enemy3_bullet_active),
+        .brick_map(brick_map),
+        .move_up(enemy3_move_up),
+        .move_down(enemy3_move_down),
+        .move_left(enemy3_move_left),
+        .move_right(enemy3_move_right),
+        .fire(enemy3_fire),
+        .blocked(enemy3_ai_blocked),
+        .bullet_x_in(bullet_x),
+        .bullet_y_in(bullet_y),
+        .bullet_active_in(bullet_active),
+        .got_hit(enemy3_got_hit),
+        .dead(enemy_dead)
+    );
+    
+    
     tank_top_level enemy_renderer (
     .vga_clk(clk_25MHz),
     .DrawX(drawX),
@@ -364,6 +507,68 @@ module color_picker(
     .green(enemy_tank_green),
     .blue(enemy_tank_blue),
     .is_enemy(1)
+);
+
+tank_top_level enemy2_renderer (
+    .vga_clk(clk_25MHz),
+    .DrawX(drawX),
+    .DrawY(drawY),
+    .tankx(enemy2_tank_x),
+    .tanky(enemy2_tank_y),
+    .TankDir(enemy2_tank_dir),
+    .bullet_dir(enemy2_bullet_dir),
+    .bullet_x(enemy2_bullet_x),
+    .bullet_y(enemy2_bullet_y),
+    .bullet_visible(enemy2_bullet_visible),
+    .show_tank(enemy2_show_tank),
+    .red(enemy2_tank_red),
+    .green(enemy2_tank_green),
+    .blue(enemy2_tank_blue),
+    .is_enemy(1)
+);
+
+tank_top_level enemy3_renderer (
+    .vga_clk(clk_25MHz),
+    .DrawX(drawX),
+    .DrawY(drawY),
+    .tankx(enemy3_tank_x),
+    .tanky(enemy3_tank_y),
+    .TankDir(enemy3_tank_dir),
+    .bullet_dir(enemy3_bullet_dir),
+    .bullet_x(enemy3_bullet_x),
+    .bullet_y(enemy3_bullet_y),
+    .bullet_visible(enemy3_bullet_visible),
+    .show_tank(enemy3_show_tank),
+    .red(enemy3_tank_red),
+    .green(enemy3_tank_green),
+    .blue(enemy3_tank_blue),
+    .is_enemy(1)
+);
+
+enemy_ai_controller enemy2_ai (
+    .clk(vsync),
+    .Reset(reset),
+    .TankX(enemy2_tank_x),
+    .TankY(enemy2_tank_y),
+    .move_up(enemy2_move_up),
+    .move_down(enemy2_move_down),
+    .move_left(enemy2_move_left),
+    .move_right(enemy2_move_right),
+    .fire(enemy2_fire),
+    .blocked(enemy2_ai_blocked)
+);
+
+enemy_ai_controller enemy3_ai (
+    .clk(vsync),
+    .Reset(reset),
+    .TankX(enemy3_tank_x),
+    .TankY(enemy3_tank_y),
+    .move_up(enemy3_move_up),
+    .move_down(enemy3_move_down),
+    .move_left(enemy3_move_left),
+    .move_right(enemy3_move_right),
+    .fire(enemy3_fire),
+    .blocked(enemy3_ai_blocked)
 );
 
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu May  8 19:00:08 2025
+| Date         : Thu May  8 22:31:19 2025
 | Host         : Leo running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mb_usb_hdmi_top_utilization_synth.rpt -pb mb_usb_hdmi_top_utilization_synth.pb
 | Design       : mb_usb_hdmi_top
@@ -28,18 +28,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 5915 |     0 |          0 |     32600 | 18.14 |
-|   LUT as Logic          | 5915 |     0 |          0 |     32600 | 18.14 |
-|   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |  850 |     0 |          0 |     65200 |  1.30 |
-|   Register as Flip Flop |  850 |     0 |          0 |     65200 |  1.30 |
-|   Register as Latch     |    0 |     0 |          0 |     65200 |  0.00 |
-| F7 Muxes                | 1070 |     0 |          0 |     16300 |  6.56 |
-| F8 Muxes                |    2 |     0 |          0 |      8150 |  0.02 |
-+-------------------------+------+-------+------------+-----------+-------+
++-------------------------+-------+-------+------------+-----------+-------+
+|        Site Type        |  Used | Fixed | Prohibited | Available | Util% |
++-------------------------+-------+-------+------------+-----------+-------+
+| Slice LUTs*             | 18814 |     0 |          0 |     32600 | 57.71 |
+|   LUT as Logic          | 18814 |     0 |          0 |     32600 | 57.71 |
+|   LUT as Memory         |     0 |     0 |          0 |      9600 |  0.00 |
+| Slice Registers         |  1587 |     0 |          0 |     65200 |  2.43 |
+|   Register as Flip Flop |  1587 |     0 |          0 |     65200 |  2.43 |
+|   Register as Latch     |     0 |     0 |          0 |     65200 |  0.00 |
+| F7 Muxes                |  4001 |     0 |          0 |     16300 | 24.55 |
+| F8 Muxes                |    32 |     0 |          0 |      8150 |  0.39 |
++-------------------------+-------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 
@@ -56,10 +56,10 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 25    |          Yes |           - |          Set |
-| 145   |          Yes |           - |        Reset |
+| 48    |          Yes |           - |          Set |
+| 281   |          Yes |           - |        Reset |
 | 8     |          Yes |         Set |            - |
-| 672   |          Yes |       Reset |            - |
+| 1250  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -144,26 +144,26 @@ Warning! LUT value is adjusted to account for LUT combining.
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| LUT6     | 4251 |                 LUT |
-| MUXF7    | 1070 |               MuxFx |
-| LUT3     |  861 |                 LUT |
-| LUT5     |  680 |                 LUT |
-| FDRE     |  672 |        Flop & Latch |
-| LUT2     |  384 |                 LUT |
-| LUT4     |  341 |                 LUT |
-| FDCE     |  145 |        Flop & Latch |
-| CARRY4   |  135 |          CarryLogic |
-| LUT1     |   33 |                 LUT |
-| OBUF     |   29 |                  IO |
-| FDPE     |   25 |        Flop & Latch |
-| FDSE     |    8 |        Flop & Latch |
-| IBUF     |    5 |                  IO |
-| MUXF8    |    2 |               MuxFx |
-| BUFG     |    1 |               Clock |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT6     | 15243 |                 LUT |
+| MUXF7    |  4001 |               MuxFx |
+| LUT5     |  1951 |                 LUT |
+| LUT3     |  1336 |                 LUT |
+| FDRE     |  1250 |        Flop & Latch |
+| LUT4     |   553 |                 LUT |
+| LUT2     |   513 |                 LUT |
+| FDCE     |   281 |        Flop & Latch |
+| CARRY4   |   267 |          CarryLogic |
+| LUT1     |    59 |                 LUT |
+| FDPE     |    48 |        Flop & Latch |
+| MUXF8    |    32 |               MuxFx |
+| OBUF     |    29 |                  IO |
+| FDSE     |     8 |        Flop & Latch |
+| IBUF     |     5 |                  IO |
+| BUFG     |     1 |               Clock |
++----------+-------+---------------------+
 
 
 8. Black Boxes
@@ -172,14 +172,14 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------------------------------+------+
 |             Ref Name             | Used |
 +----------------------------------+------+
-| tank_up_rom                      |    2 |
-| tank_right_rom                   |    2 |
-| tank_left_rom                    |    2 |
-| tank_down_rom                    |    2 |
-| bullet_up_rom                    |    2 |
-| bullet_right_rom                 |    2 |
-| bullet_left_rom                  |    2 |
-| bullet_down_rom                  |    2 |
+| tank_up_rom                      |    4 |
+| tank_right_rom                   |    4 |
+| tank_left_rom                    |    4 |
+| tank_down_rom                    |    4 |
+| bullet_up_rom                    |    4 |
+| bullet_right_rom                 |    4 |
+| bullet_left_rom                  |    4 |
+| bullet_down_rom                  |    4 |
 | mb_block_xbar_0                  |    1 |
 | mb_block_rst_clk_wiz_1_100M_0    |    1 |
 | mb_block_microblaze_0_axi_intc_0 |    1 |
